@@ -102,7 +102,8 @@ function theme_scripts_and_styles() {
     wp_localize_script( 'app-script', 'App', array(
             'domain' => home_url(),
             'root' => esc_url_raw( rest_url() ),
-            'nonce' => wp_create_nonce( 'wp_rest' )
+            'nonce' => wp_create_nonce( 'wp_rest' ),
+            'csrfToken' => wp_create_nonce( 'csrf' )
         )
     );
 
@@ -113,6 +114,11 @@ function theme_scripts_and_styles() {
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts_and_styles' );
+
+/**
+ * Don't display the front-end admin bar
+ */
+add_filter( 'show_admin_bar', '__return_false' );
 
 /**
  * Enqueue custom admin scripts.
@@ -130,9 +136,12 @@ add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
  * The mapped array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  */
-array_map(function ($file) {
+array_map( function ( $file ) {
+
     $file = "inc/{$file}.php";
-    if ( ! locate_template($file, true, true) ) {
+
+    if ( ! locate_template( $file, true, true ) ) {
         wp_die( sprintf(__('Error locating <code>%s</code> for inclusion.', 'themestarter'), $file), 'File not found' );
     }
+
 }, ['helpers'] );
