@@ -4,8 +4,8 @@ let localDomain = 'your-domain.dev';
 module.exports = {
     theme: themeName,
     src: './src',
-    dist: `./dist/${theme}`,
-    distFiles: `./dist/${theme}/**/*`,
+    dist: `./dist/${themeName}`,
+    distFiles: `./dist/${themeName}/**/*`,
     themePathOnLocalServer: `/var/www/${localDomain}/wp-content/themes/${themeName}/`,
     browsersync: {
         open: 'external',

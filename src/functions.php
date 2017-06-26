@@ -43,6 +43,19 @@ if ( ! function_exists( 'theme_setup' ) ) {
 add_action( 'after_setup_theme', 'theme_setup' );
 
 /**
+ * Registers an editor stylesheet for the theme.
+ */
+add_editor_style( get_template_directory_uri() . '/assets/css/admin/editor-style.css' );
+
+/**
+  * Declare WooCommerce suppor.
+  */
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
+/**
  * Register widget areas.
  */
 function theme_widgets_init() {
@@ -83,10 +96,10 @@ function theme_scripts_and_styles() {
     wp_deregister_script( 'jquery' );
 
     // Load main scripts.
-    wp_enqueue_script( 'theme-scripts-manifest', get_template_directory_uri() . '/assets/js/manifest.js', array(), false, true );
-    wp_enqueue_script( 'theme-scripts-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array(), false, true );
-    wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/assets/js/app.js', array(), false, true );
-    wp_localize_script( 'theme-scripts', 'App', array(
+    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', '', '', true );
+    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', '', '', true );
+    wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/js/app.js', '', '', true );
+    wp_localize_script( 'app-script', 'App', array(
             'domain' => home_url(),
             'root' => esc_url_raw( rest_url() ),
             'nonce' => wp_create_nonce( 'wp_rest' )
@@ -102,6 +115,24 @@ function theme_scripts_and_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_scripts_and_styles' );
 
 /**
- * Require theme helper functions.
+ * Enqueue custom admin scripts.
  */
-require get_template_directory() . '/inc/theme-functions.php';
+function theme_admin_scripts() {
+    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', '', '', true );
+    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', '', '', true );
+    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/assets/js/admin/admin.js' );
+}
+add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
+
+/**
+ * Minimalistico required files like Sage do. :)
+ *
+ * The mapped array determines the code library included in your theme.
+ * Add or remove files to the array as needed. Supports child theme overrides.
+ */
+array_map(function ($file) {
+    $file = "inc/{$file}.php";
+    if ( ! locate_template($file, true, true) ) {
+        wp_die( sprintf(__('Error locating <code>%s</code> for inclusion.', 'themestarter'), $file), 'File not found' );
+    }
+}, ['helpers'] );
