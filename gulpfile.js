@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     browsersync = require('browser-sync'),
-    config = require('./themester.config.js');
+    config = require('./minimalistico.config.js');
 
 gulp.task('browsersync', function() {
     browsersync(config.browsersync);

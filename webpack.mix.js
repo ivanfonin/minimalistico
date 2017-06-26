@@ -1,4 +1,4 @@
-let config = require('./themester.config');
+let config = require('./minimalistico.config');
 let mix = require('laravel-mix');
 
 mix.js(`${config.src}/assets/js/app.js`, `${config.dist}/assets/js`)
