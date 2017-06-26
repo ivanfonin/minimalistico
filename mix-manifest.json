@@ -1,0 +1,22 @@
+{
+    "/dist/themester/assets/js/vendor.js": "/dist/themester/assets/js/vendor.js",
+    "/dist/themester/assets/js/app.js": "/dist/themester/assets/js/app.js",
+    "/dist/themester/assets/css/app.css": "/dist/themester/assets/css/app.css",
+    "/dist/themester/assets/css/admin/editor-style.css": "/dist/themester/assets/css/admin/editor-style.css",
+    "/dist/themester/assets/js/manifest.js": "/dist/themester/assets/js/manifest.js",
+    "/dist/themester/screenshot.png": "/dist/themester/screenshot.png",
+    "/dist/themester/style.css": "/dist/themester/style.css",
+    "/dist/themester/404.php": "/dist/themester/404.php",
+    "/dist/themester/archive.php": "/dist/themester/archive.php",
+    "/dist/themester/comments.php": "/dist/themester/comments.php",
+    "/dist/themester/content.php": "/dist/themester/content.php",
+    "/dist/themester/footer.php": "/dist/themester/footer.php",
+    "/dist/themester/functions.php": "/dist/themester/functions.php",
+    "/dist/themester/header.php": "/dist/themester/header.php",
+    "/dist/themester/index.php": "/dist/themester/index.php",
+    "/dist/themester/page.php": "/dist/themester/page.php",
+    "/dist/themester/search.php": "/dist/themester/search.php",
+    "/dist/themester/sidebar.php": "/dist/themester/sidebar.php",
+    "/dist/themester/single.php": "/dist/themester/single.php",
+    "/dist/themester/mix-manifest.json": "/dist/themester/mix-manifest.json"
+}

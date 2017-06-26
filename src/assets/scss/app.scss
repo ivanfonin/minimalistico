@@ -1,0 +1,8 @@
+@import "rtl";
+
+$variable: 20px;
+
+body{
+    margin: $variable;
+    padding: $variable;
+}

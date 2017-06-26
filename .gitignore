@@ -1,0 +1,3 @@
+# Do not node_modules and ./dist folder.
+dist/
+node_modules/

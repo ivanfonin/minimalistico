@@ -1,0 +1,20 @@
+var gulp = require('gulp'),
+    browsersync = require('browser-sync'),
+    config = require('./themester.config.js');
+
+gulp.task('browsersync', function() {
+    browsersync(config.browsersync);
+});
+
+gulp.task('copy-files', function() {
+    return gulp.src(config.distFiles)
+        .pipe(gulp.dest(config.themePathOnLocalServer));
+});
+
+gulp.task('browsersync-reload', function () {
+    browsersync.reload();
+});
+
+gulp.task('default', ['browsersync'], function () {
+    gulp.watch(config.distFiles, ['copy-files', 'browsersync-reload']);
+});
