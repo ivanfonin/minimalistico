@@ -126,7 +126,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 function theme_admin_scripts() {
     wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', '', '', true );
     wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', '', '', true );
-    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/assets/js/admin/admin.js' );
+    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/assets/js/admin/admin.js', '', '', true );
 }
 add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 
