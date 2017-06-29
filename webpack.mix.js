@@ -12,7 +12,7 @@ mix.js(`${config.src}/assets/js/admin/admin.js`, `${config.dist}/assets/js/admin
     .copy(`${config.src}/screenshot.png`, `${config.dist}/screenshot.png`)
     .copy(`${config.src}/style.css`, `${config.dist}/style.css`)
     .copy(`${config.src}/*.php`, `${config.dist}/`)
-    //.copy(`mix-manifest.json`, `${config.dist}/`) Not using it..
+    //.copy(`mix-manifest.json`, `${config.dist}/`) Not using it for now..
 
     .copyDirectory(`${config.src}/inc`, `${config.dist}/inc`)
     .copyDirectory(`${config.src}/partials`, `${config.dist}/partials`)
