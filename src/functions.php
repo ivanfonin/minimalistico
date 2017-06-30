@@ -84,6 +84,17 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /**
+* Remove jQuery Migrate script.
+*/
+function theme_remove_jquery_migrate( &$scripts) {
+    if ( ! is_admin() ) {
+        $scripts->remove( 'jquery' );
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
+    }
+}
+add_filter( 'wp_default_scripts', 'theme_remove_jquery_migrate' );
+
+/**
  * Enqueue theme scripts and styles.
  */
 function theme_scripts_and_styles() {
@@ -93,9 +104,9 @@ function theme_scripts_and_styles() {
     wp_enqueue_style( 'app-style', get_template_directory_uri() . '/assets/css/app.css' );
 
     // Load main scripts.
-    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', '', '', true );
-    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', '', '', true );
-    wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array( 'app-manifest' ), '', true );
+    wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/js/app.js', array( 'app-vendor' ), '', true );
     wp_localize_script( 'app-script', 'App', array(
             'domain' => home_url(),
             'root' => esc_url_raw( rest_url() ),
@@ -124,14 +135,14 @@ add_filter( 'show_admin_bar' , 'theme_show_admin_bar_for_admins_only');
  * Enqueue custom admin scripts.
  */
 function theme_admin_scripts() {
-    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', '', '', true );
-    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', '', '', true );
-    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/assets/js/admin/admin.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array( 'app-manifest' ), '', true );
+    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/assets/js/admin/admin.js', array( 'app-vendor' ), '', true );
 }
 add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 
 /**
- * Minimalistico required files like Sage do. :)
+ * Minimalistico require files like Sage do. :)
  *
  * The mapped array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.

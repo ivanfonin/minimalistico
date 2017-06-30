@@ -36,7 +36,7 @@
             errors: []
         }),
         mounted() {
-            console.log('Component mounted.')
+            console.log('Posts component is mounted.')
         },
         created() {
             // Fetches posts when the component is created.
