@@ -112,7 +112,7 @@ function theme_scripts_and_styles() {
             'ajaxUrl' => admin_url( 'admin-ajax.php' ),
             'root' => esc_url_raw( rest_url() ),
             'nonce' => wp_create_nonce( 'wp_rest' ),
-            'csrfToken' => wp_create_nonce( 'csrf' )
+            'csrfToken' => wp_create_nonce( 'csrf' ),
         )
     );
 
