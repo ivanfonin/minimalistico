@@ -21,10 +21,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * a simple convenience so we don't have to attach every token manually.
  */
 
-let nonce = App.nonce;
-
 if (nonce) {
-    window.axios.defaults.headers.common['X-WP-Nonce'] = nonce;
+    window.axios.defaults.headers.common['X-WP-Nonce'] = App.nonce;
 } else {
     console.error('REST nonce not found.');
 }
