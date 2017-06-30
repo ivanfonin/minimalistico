@@ -113,9 +113,12 @@ function theme_scripts_and_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_scripts_and_styles' );
 
 /**
- * Don't display the front-end admin bar
+ * Don't display the front-end admin bar for non administrators.
  */
-add_filter( 'show_admin_bar', '__return_false' );
+function theme_show_admin_bar_for_admins_only( $content ) {
+    return ( current_user_can( 'administrator' ) ) ? $content : false;
+}
+add_filter( 'show_admin_bar' , 'theme_show_admin_bar_for_admins_only');
 
 /**
  * Enqueue custom admin scripts.
