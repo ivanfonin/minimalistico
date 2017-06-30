@@ -84,17 +84,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /**
-* Remove jQuery Migrate script.
-*/
-function theme_remove_jquery_migrate( &$scripts) {
-    if ( ! is_admin() ) {
-        $scripts->remove( 'jquery' );
-        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
-    }
-}
-add_filter( 'wp_default_scripts', 'theme_remove_jquery_migrate' );
-
-/**
  * Enqueue theme scripts and styles.
  */
 function theme_scripts_and_styles() {
