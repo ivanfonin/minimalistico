@@ -4,10 +4,11 @@
   "description": "Minimalistico is a WordPress theme development workflow with ES6, Vue.js support. Thanks to Laravel Mix.",
   "main": "",
   "scripts": {
-    "browsersync": "npm run dev && gulp &",
+    "setup": "echo 'Will add setup command soon...'",
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "npm run browsersync && cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "browsersync": "npm run dev && gulp &"
   },
   "keywords": [],
   "author": "Ivan Fonin",
