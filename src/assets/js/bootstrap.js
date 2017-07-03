@@ -3,7 +3,20 @@
  */
 
 //window.$ = window.jQuery = require('jquery');
+// We already have jQuery and jQuery Migrate scripts included with WordPress.
 window.$ = window.jQuery;
+
+/**
+ * We'll load UIKit base script and script for dealing with icons.
+ */
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+// loads the Icon plugin
+//UIkit.use(Icons);
+
+// components can be called from the imported UIkit reference
+//UIkit.notification('Hello world.');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
