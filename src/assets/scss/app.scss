@@ -1,4 +1,20 @@
-// UIKit.
-@import "uikit/variables-theme.scss";
-@import "uikit/mixins-theme.scss";
-@import "uikit/uikit-theme.scss";
+// app.scss
+
+// 1. Custom variables and variable overwrites.
+//@import "theme/accordion.scss";
+//@import "theme/alert.scss";
+//@import "theme/align.scss";
+// ... import all
+
+// 2. Import default variables and available mixins.
+@import "uikit/variables.scss";
+@import "uikit/mixins.scss";
+
+// 3. Custom mixin overwrites.
+//@import "theme/accordion-mixins.scss";
+//@import "theme/alert-mixins.scss";
+//@import "theme/align-mixins.scss";
+// ... import all
+
+// 4. Import UIkit.
+@import "uikit/uikit.scss";
