@@ -11,7 +11,7 @@ if (isSetup) {
     // Client files.
     mix.js(`${config.src}/assets/js/admin/admin.js`, `${config.dist}/assets/js/admin`)
         .js(`${config.src}/assets/js/app.js`, `${config.dist}/assets/js`)
-        .extract(['jquery', 'vue', 'axios', 'vue-router'])
+        .extract(['jquery', 'vue', 'axios', 'vue-router', 'uikit'])
 
         .sass(`${config.src}/assets/scss/app.scss`, `${config.dist}/assets/css/app.css`)
         .sass(`${config.src}/assets/scss/admin/editor-style.scss`, `${config.dist}/assets/css/admin`)
