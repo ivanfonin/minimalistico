@@ -1,3 +1,4 @@
-# Do not node_modules and ./dist folder.
+# Do not watch node_modules, UIkit styles, and ./dist folder.
 dist/
 node_modules/
+src/assets/scss/uikit/

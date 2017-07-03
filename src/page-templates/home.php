@@ -22,4 +22,5 @@ __( 'Home Page', 'themestarter' ); ?>
 
     <posts></posts>
 
+
 <?php get_footer(); ?>

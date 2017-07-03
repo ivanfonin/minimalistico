@@ -3,15 +3,26 @@
  * Footer template file.
  */
 ?>
-        </div><!-- .site-content -->
 
-        <footer class="site-footer">
-            <p><?php printf( __( 'Starter theme for %1$s created by %2$s.', 'themestarter' ),
-                            '<a target="_blank" href="http://wordpress.org/">WordPress</a>',
-                            '<a target="_blank" href="http://ivanfonin.com/" rel="designer">Ivan Fonin</a>' ); ?></p>
+        <footer class="uk-section uk-section-primary tm-section-primary uk-section-xlarge uk-padding-remove-bottom">
+            <div class="uk-container uk-text-center">
+                <div class="uk-margin-top uk-margin-bottom">
+                    <div class="uk-child-width-auto@m uk-flex-middle uk-grid" uk-grid>
+                        <div class="uk-text-left@m uk-text-center">
+                            <p>&copy; 2017, Веб минимализм.</p>
+                        </div>
+                        <div class="uk-text-center">
+                            <?php wp_nav_menu( array( 'theme_location' => 'main', 'container_class' => 'uk-navbar-right', 'menu_class' => 'uk-navbar-nav' ) ); ?>
+                        </div>
+                        <div class="uk-text-right@m uk-text-center">
+                            <p>Политика конфиденциальности</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
-    
-    </div><!-- .site-wrapper -->
+
+    </div><!-- #app -->
 <?php wp_footer(); ?>
 </body>
 </html>
