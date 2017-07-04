@@ -1,11 +1,13 @@
 // app.scss
 
 // 1. Custom variables and variable overwrites.
+@import "theme/variables";
 //@import "theme/accordion.scss";
 //@import "theme/alert.scss";
 //@import "theme/align.scss";
 @import "theme/base.scss";
 @import "theme/container.scss";
+@import "theme/navbar.scss";
 // ... import all
 
 // 2. Import default variables and available mixins.
@@ -18,6 +20,7 @@
 //@import "theme/align-mixins.scss";
 @import "theme/base-mixins.scss";
 @import "theme/container-mixins.scss";
+@import "theme/navbar-mixins.scss";
 // ... import all
 
 // 4. Import UIkit.
