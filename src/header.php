@@ -25,11 +25,13 @@
                         </a>
                     </div>
                     <div class="uk-navbar-right">
-                        <?php wp_nav_menu( array(
-                            'theme_location' => 'main',
-                            'container' => false,
-                            'menu_class' => 'uk-navbar-nav' ) );
-                        ?>
+                        <?php if ( has_nav_menu( 'main' ) ) : ?>
+                            <?php wp_nav_menu( array(
+                                'theme_location' => 'main',
+                                'container' => false,
+                                'menu_class' => 'uk-navbar-nav' ) );
+                            ?>
+                        <?php endif; ?>
                         <div class="uk-navbar-item uk-visible@m">
                             <a href="#" class="uk-button uk-button-default">Оставить заявку</a>
                         </div>
