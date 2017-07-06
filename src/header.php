@@ -16,7 +16,7 @@
 </head>
 <body <?php body_class(); ?>>
     <div id="app">
-        <div class="uk-navbar-container" uk-sticky="show-on-up: true; animation: uk-animation-slide-top;">
+        <div class="uk-navbar-container">
             <div class="uk-container">
                 <nav class="uk-navbar" uk-navbar>
                     <div class="uk-navbar-left">
@@ -24,7 +24,16 @@
                             <?php bloginfo( 'name' ); ?>
                         </a>
                     </div>
-                    <?php wp_nav_menu( array( 'theme_location' => 'main', 'container_class' => 'uk-navbar-right', 'menu_class' => 'uk-navbar-nav' ) ); ?>
+                    <div class="uk-navbar-right">
+                        <?php wp_nav_menu( array(
+                            'theme_location' => 'main',
+                            'container' => false,
+                            'menu_class' => 'uk-navbar-nav' ) );
+                        ?>
+                        <div class="uk-navbar-item uk-visible@m">
+                            <a href="#" class="uk-button uk-button-default">Оставить заявку</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
