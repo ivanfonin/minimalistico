@@ -4,7 +4,7 @@
  */
 ?>
 
-        <footer class="uk-section uk-section-primary tm-section-primary uk-section-xlarge uk-padding-remove-bottom">
+        <footer class="uk-section uk-section-primary uk-section-xlarge uk-padding-remove-bottom">
             <div class="uk-container uk-text-center">
                 <div class="uk-margin-top uk-margin-bottom">
                     <div class="uk-child-width-auto@m uk-flex-middle uk-grid" uk-grid>

@@ -7,7 +7,8 @@
     "setup": "cross-env NODE_ENV=setup webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "watch": "npm run browsersync && cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "browsersync": "gulp &"
   },
   "keywords": [],
   "author": "Ivan Fonin",
@@ -17,6 +18,7 @@
     "browser-sync-webpack-plugin": "^1.1.4",
     "cross-env": "^3.2.3",
     "gulp": "^3.9.1",
+    "gulp-notify": "^3.0.0",
     "laravel-mix": "^1.0.6",
     "webpack": "^2.2.0"
   },

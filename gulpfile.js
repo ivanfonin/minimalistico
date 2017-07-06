@@ -11,10 +11,10 @@ gulp.task('copy-files', function() {
         .pipe(gulp.dest(config.themePathOnLocalServer));
 });
 
-gulp.task('browsersync-reload', function () {
+gulp.task('browsersync-reload', ['copy-files'], function () {
     browsersync.reload();
 });
 
 gulp.task('default', ['browsersync'], function () {
-    gulp.watch(config.distFiles, ['copy-files', 'browsersync-reload']);
+    gulp.watch(config.distFiles, ['browsersync-reload']);
 });
