@@ -1,4 +1,6 @@
 let themeName = 'minimalistico';
+// Set local IP address (192.168.0.10) to connect from your local network.
+let localHost = 'api.themetester.dev';
 let localDomain = 'api.themetester.dev';
 
 module.exports = {
@@ -9,7 +11,7 @@ module.exports = {
     themePathOnLocalServer: `/var/www/${localDomain}/wp-content/themes/${themeName}/`,
     browsersync: {
         open: 'external',
-        host: localDomain,
+        host: localHost,
         proxy: localDomain,
         port: 8080
     }
