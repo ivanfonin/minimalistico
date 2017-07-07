@@ -1,0 +1,9 @@
+$button-default-background: $global-background;
+$button-default-color: $global-link-color;
+$button-default-hover-background: $global-background;
+$button-default-hover-color: $global-link-hover-color;
+$button-default-active-background: darken($button-default-background, 1%);
+$button-default-active-color: $global-link-color;
+
+$button-text-color: $global-link-color;
+$button-text-hover-color: $global-link-hover-color;

@@ -1,8 +1,13 @@
 @mixin hook-button() {
     border-radius: 500px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 @mixin hook-button-text(){
+    font-size: $button-small-font-size;
+    text-transform: uppercase;
+
     &:before{
         content: "";
         position: absolute;

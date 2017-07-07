@@ -35,7 +35,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="uk-text-center uk-width-1-4@m uk-text-right@m" uk-scrollspy="cls:uk-animation-slide-right-small">
-                            <a class="uk-button uk-inline uk-button-text uk-text-small" href="#">Политика конфиденциальности</a>
+                            <a class="uk-text-small" href="#">Политика конфиденциальности</a>
                         </div>
                     </div>
                 </div>

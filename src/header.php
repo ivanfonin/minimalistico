@@ -36,7 +36,7 @@
                             <a href="#" class="uk-button uk-button-muted uk-padding-remove-right uk-text-small uk-text-bold">+7 (495) 755-55-55</a>
                         </div>
                         <div class="uk-navbar-item uk-visible@m">
-                            <a href="#" class="uk-button uk-button-primary">Оставить заявку</a>
+                            <a href="#" class="uk-button uk-button-default uk-box-shadow-small uk-box-shadow-hover-medium">Оставить заявку</a>
                         </div>
                     </div>
                 </nav>
