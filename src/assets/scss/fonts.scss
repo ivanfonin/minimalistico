@@ -1,3 +1,30 @@
+// PT Sans Regular
+@font-face {
+	font-family: "PT Sans";
+	src: url("../fonts/PT_Sans-Web-Regular.ttf"),
+	url("../fonts/PT_Sans-Web-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+// PT Sans Italic
+@font-face {
+	font-family: "PT Sans";
+	src: url("../fonts/PT_Sans-Web-Italic.ttf"),
+	url("../fonts/PT_Sans-Web-Italic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+
+// PT Sans Bold
+@font-face {
+	font-family: "PT Sans";
+	src: url("../fonts/PT_Sans-Web-Bold.ttf"),
+	url("../fonts/PT_Sans-Web-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
 // Merriweather Light
 @font-face {
 	font-family: "Merriweather";
@@ -12,6 +39,6 @@
 	font-family: "Merriweather";
 	src: url("../fonts/Merriweather-Bold.ttf"),
 	url("../fonts/Merriweather-Bold.ttf") format("truetype");
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
 }
