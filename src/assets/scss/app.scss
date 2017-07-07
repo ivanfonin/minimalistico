@@ -4,8 +4,9 @@
 @import "fonts.scss";
 
 // 1. Custom variables and variable overwrites.
-@import "theme/variables";
+@import "theme/variables.scss";
 @import "theme/base.scss";
+@import "theme/navbar.scss";
 // ... import all
 
 // 2. Import default variables and available mixins.
@@ -14,6 +15,8 @@
 
 // 3. Custom mixin overwrites.
 @import "theme/base-mixins.scss";
+@import "theme/button-mixins.scss";
+@import "theme/navbar-mixins.scss";
 // ... import all
 
 // 4. Import UIkit.
