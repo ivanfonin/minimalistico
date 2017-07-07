@@ -2,6 +2,8 @@
     & > .uk-container{
         .uk-navbar-left{
             margin-left: -$navbar-nav-item-padding-horizontal;
+        }
+        .uk-navbar-right{
             margin-right: -$navbar-nav-item-padding-horizontal;
         }
     }
