@@ -1,4 +1,8 @@
-@mixin hook-button-text(){    
+@mixin hook-button() {
+    border-radius: 500px;
+}
+
+@mixin hook-button-text(){
     &:before{
         content: "";
         position: absolute;

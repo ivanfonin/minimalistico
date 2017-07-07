@@ -25,20 +25,11 @@
 	font-style: normal;
 }
 
-// Merriweather Light
+// Yeseva One
 @font-face {
-	font-family: "Merriweather";
-	src: url("../fonts/Merriweather-Light.ttf"),
-	url("../fonts/Merriweather-Light.ttf") format("truetype");
-	font-weight: 300;
-	font-style: normal;
-}
-
-// Merriweather Bold
-@font-face {
-	font-family: "Merriweather";
-	src: url("../fonts/Merriweather-Bold.ttf"),
-	url("../fonts/Merriweather-Bold.ttf") format("truetype");
-	font-weight: 700;
+	font-family: "Yeseva One";
+	src: url("../fonts/YesevaOne-Regular.ttf"),
+	url("../fonts/YesevaOne-Regular.ttf") format("truetype");
+	font-weight: 400;
 	font-style: normal;
 }

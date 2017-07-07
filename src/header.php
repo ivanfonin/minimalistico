@@ -23,8 +23,6 @@
                         <a class="uk-navbar-item uk-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                             <?php bloginfo( 'name' ); ?>
                         </a>
-                    </div>
-                    <div class="uk-navbar-right">
                         <?php if ( has_nav_menu( 'main' ) ) : ?>
                             <?php wp_nav_menu( array(
                                 'theme_location' => 'main',
@@ -32,6 +30,11 @@
                                 'menu_class' => 'uk-navbar-nav' ) );
                             ?>
                         <?php endif; ?>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <div class="uk-navbar-item uk-visible@m">
+                            <a href="#" class="uk-button uk-button-muted uk-padding-remove-right uk-text-small uk-text-bold">+7 (495) 755-55-55</a>
+                        </div>
                         <div class="uk-navbar-item uk-visible@m">
                             <a href="#" class="uk-button uk-button-primary">Оставить заявку</a>
                         </div>

@@ -7,6 +7,7 @@
 @import "theme/variables.scss";
 @import "theme/base.scss";
 @import "theme/navbar.scss";
+@import "theme/utility.scss";
 // ... import all
 
 // 2. Import default variables and available mixins.
@@ -17,6 +18,7 @@
 @import "theme/base-mixins.scss";
 @import "theme/button-mixins.scss";
 @import "theme/navbar-mixins.scss";
+@import "theme/utility-mixins.scss";
 // ... import all
 
 // 4. Import UIkit.
