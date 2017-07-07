@@ -8,7 +8,7 @@ __( 'Home Page', 'themestarter' ); ?>
 
 <?php get_header(); ?>
 
-    <main class="uk-container uk-section">
+    <main>
         <?php while ( have_posts() ) : the_post(); ?>
 
             <?php locate_template( 'partials/content/page.php', true, true ); ?>
@@ -17,10 +17,9 @@ __( 'Home Page', 'themestarter' ); ?>
                 <?php comments_template(); ?>
             <?php endif; ?>
 
-            <posts></posts>
-
         <?php endwhile; ?>
     </main>
 
+    <?php locate_template( 'partials/sections/call-to-action.php', true, true ); ?>
 
 <?php get_footer(); ?>

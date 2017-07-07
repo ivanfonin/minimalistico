@@ -6,10 +6,10 @@
 
 <?php get_header(); ?>
 
-    <main class="site-page">
+    <main>
         <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php get_template_part( 'partials/content', 'page' ); ?>
+            <?php locate_template( 'partials/content/page.php', true, true ); ?>
 
             <?php if ( comments_open() || get_comments_number() ) : ?>
                 <?php comments_template(); ?>
@@ -18,5 +18,4 @@
         <?php endwhile; ?>
     </main>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
