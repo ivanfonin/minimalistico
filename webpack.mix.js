@@ -13,7 +13,9 @@ if (isSetup) {
         .js(`${config.src}/assets/js/app.js`, `${config.dist}/assets/js`)
         .extract(['jquery', 'vue', 'axios', 'vue-router', 'uikit'])
 
-        .sass(`${config.src}/assets/scss/app.scss`, `${config.dist}/assets/css/app.css`)
+        .sass(`${config.src}/assets/scss/app.scss`, `${config.dist}/assets/css/app.css`).options({
+            processCssUrls: false
+        })
         .sass(`${config.src}/assets/scss/admin/editor-style.scss`, `${config.dist}/assets/css/admin`)
 
         .copy(`${config.src}/screenshot.png`, `${config.dist}/screenshot.png`)

@@ -36,6 +36,5 @@ import UIkit from 'uikit';
 let stickys = UIkit.sticky('#app > .uk-navbar-container', {
     showOnUp: true,
     animation: 'uk-animation-slide-top',
-    clsActive: 'uk-navbar-sticky-active',
-    top: '40vh'
+    clsActive: 'uk-navbar-sticky-active'
 });

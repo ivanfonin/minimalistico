@@ -1,6 +1,8 @@
 // app.scss
 // https://getuikit.com/docs/sass
 
+@import "fonts.scss";
+
 // 1. Custom variables and variable overwrites.
 @import "theme/variables";
 @import "theme/base.scss";

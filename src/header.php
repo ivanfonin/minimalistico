@@ -20,7 +20,7 @@
             <div class="uk-container">
                 <nav class="uk-navbar" uk-navbar>
                     <div class="uk-navbar-left">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="uk-navbar-item uk-logo">
+                        <a class="uk-navbar-item uk-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                             <?php bloginfo( 'name' ); ?>
                         </a>
                     </div>
@@ -33,7 +33,7 @@
                             ?>
                         <?php endif; ?>
                         <div class="uk-navbar-item uk-visible@m">
-                            <a href="#" class="uk-button uk-button-default">Оставить заявку</a>
+                            <a href="#" class="uk-button uk-button-primary">Оставить заявку</a>
                         </div>
                     </div>
                 </nav>
