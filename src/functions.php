@@ -145,4 +145,6 @@ array_map( function ( $file ) {
         wp_die( sprintf(__('Error locating <code>%s</code> for inclusion.', 'themestarter'), $file), 'File not found' );
     }
 
+    require( $file );
+
 }, ['helpers'] );

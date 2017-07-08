@@ -18,25 +18,19 @@
 
         <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php get_template_part( 'partials/content', 'search' ); ?>
+            <?php get_template_part( 'partials/content/search' ); ?>
 
         <?php endwhile; ?>
 
-        <?php the_posts_pagination( array(
-            'end_size' => 2,
-            'mid_size' => 2,
-            'prev_text' => '<',
-            'next_text' => '>',
-            'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
-        ) ); ?>
+        <?php the_posts_pagination( $pagination_parameters ); ?>
 
     <?php else : ?>
 
-        <?php get_template_part( 'partials/content', 'none' ); ?>
+        <?php get_template_part( 'partials/content/none' ); ?>
 
     <?php endif; ?>
 
 </main>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
