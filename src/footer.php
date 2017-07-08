@@ -8,7 +8,7 @@
             <div class="uk-container">
                 <div class="uk-margin-top uk-margin-bottom">
                     <div class="uk-child-width-auto@m uk-flex-middle" uk-grid>
-                        <div class="uk-width-1-4@m uk-text-left@m uk-text-center" uk-scrollspy="cls:uk-animation-slide-left-small">
+                        <div class="uk-width-1-2@s uk-width-1-4@m uk-text-left@s uk-text-center" uk-scrollspy="cls:uk-animation-slide-left-small">
                             <span class="uk-text-small">&copy; 2014-<?php echo date('Y'); ?>,</span> <a class="uk-text-small" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">«<?php bloginfo( 'name' ); ?>»</a>
                         </div>
                         <div class="uk-width-1-2@m uk-visible@m" uk-scrollspy="cls:uk-animation-slide-bottom-small">
@@ -21,7 +21,7 @@
                                 ); ?>
                             <?php endif; ?>
                         </div>
-                        <div class="uk-text-center uk-width-1-4@m uk-text-right@m uk-margin-remove-top" uk-scrollspy="cls:uk-animation-slide-right-small">
+                        <div class="uk-text-center uk-width-1-2@s uk-width-1-4@m uk-text-right@s uk-margin-remove-top" uk-scrollspy="cls:uk-animation-slide-right-small">
                             <a class="uk-text-small" href="#">Политика конфиденциальности</a>
                         </div>
                     </div>

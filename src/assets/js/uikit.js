@@ -18,6 +18,7 @@ let stickyNavbar = UIkit.sticky('#app > .uk-navbar-container', {
 // Search modal is shown.
 // Should use components 'shown' event, but it is not firing.
 // Cannot figure how to deal with it right now.
+// Seems that it is a bug - https://github.com/uikit/uikit/issues/2742
 var $searchInput = $('#search-modal form input[type="search"]');
 
 function focusOnSearchInputField() {
@@ -27,4 +28,8 @@ function focusOnSearchInputField() {
 $(document).on('click', '#show-search-modal', function(e) {
     e.preventDefault();
     setTimeout( focusOnSearchInputField, 100 );
+});
+
+$('#search-modal').on('shown', function() {
+    console.log('Shown event is fired.');
 });
