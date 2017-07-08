@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-    <main>
+    <main role="main">
         <?php while ( have_posts() ) : the_post(); ?>
 
             <?php locate_template( 'partials/content/page.php', true, true ); ?>
