@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<main id="main" role="main">
+<main role="main">
 
     <?php if ( have_posts() ) : ?>
 
