@@ -34,27 +34,25 @@
                     </div>
                     <div class="uk-navbar-right">
                         <div class="uk-navbar-item uk-padding-remove-left">
-                            <a href="#modal-full" uk-toggle><span uk-icon="icon: search"></span></a>
+                            <a id="show-search-modal" href="#search-modal" uk-toggle><span uk-icon="icon: search"></span></a>
                         </div>
                         <div class="uk-navbar-item uk-hidden@m">
-                            <a href="#modal-full" uk-toggle><span uk-icon="icon: menu"></span></a>
+                            <a href="#"><span uk-icon="icon: menu"></span></a>
                         </div>
                         <div class="uk-navbar-item uk-visible@m">
-                            <a href="#" class="uk-button uk-button-default uk-box-shadow-small uk-box-shadow-hover-medium">Оставить заявку</a>
+                            <a href="#" class="uk-button uk-button-default uk-box-shadow-medium uk-box-shadow-hover-small">Оставить заявку</a>
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
 
-        <div id="modal-full" class="uk-modal-full" uk-modal>
+        <div id="search-modal" class="uk-modal-full" uk-modal>
             <div class="uk-modal-dialog">
-                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-                <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
-                    <div class="uk-background-cover" style="background-image: url('../docs/images/photo.jpg');" uk-height-viewport></div>
-                    <div class="uk-padding-large">
-                        <h1>Headline</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <button class="uk-modal-close-full uk-close-small" type="button" uk-close></button>
+                <div class="uk-grid-collapse uk-flex-center" uk-grid>
+                    <div class="uk-flex uk-flex-center uk-flex-middle uk-width-large" uk-height-viewport>
+                        <?php get_search_form(); ?>
                     </div>
                 </div>
             </div>

@@ -17,6 +17,7 @@
     "/dist/minimalistico/index.php": "/dist/minimalistico/index.php",
     "/dist/minimalistico/page.php": "/dist/minimalistico/page.php",
     "/dist/minimalistico/search.php": "/dist/minimalistico/search.php",
+    "/dist/minimalistico/searchform.php": "/dist/minimalistico/searchform.php",
     "/dist/minimalistico/sidebar.php": "/dist/minimalistico/sidebar.php",
     "/dist/minimalistico/single.php": "/dist/minimalistico/single.php"
 }

@@ -22,7 +22,13 @@
 
         <?php endwhile; ?>
 
-        <?php the_posts_pagination( $pagination_parameters ); ?>
+        <?php the_posts_pagination( array(
+            'end_size' => 2,
+            'mid_size' => 2,
+            'prev_text' => '<',
+            'next_text' => '>',
+            'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
+        ) ); ?>
 
     <?php else : ?>
 
