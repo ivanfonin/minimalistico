@@ -11,7 +11,7 @@
                         <div class="uk-width-1-4@m uk-text-left@m uk-text-center" uk-scrollspy="cls:uk-animation-slide-left-small">
                             <span class="uk-text-small">&copy; 2014-<?php echo date('Y'); ?>,</span> <a class="uk-text-small" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">«<?php bloginfo( 'name' ); ?>»</a>
                         </div>
-                        <div class="uk-width-1-2@m" uk-scrollspy="cls:uk-animation-slide-bottom-small">
+                        <div class="uk-width-1-2@m uk-visible@m" uk-scrollspy="cls:uk-animation-slide-bottom-small">
                             <?php if ( has_nav_menu( 'main' ) ) : ?>
                                 <?php wp_nav_menu( array(
                                     'theme_location' => 'main',
@@ -21,7 +21,7 @@
                                 ); ?>
                             <?php endif; ?>
                         </div>
-                        <div class="uk-text-center uk-width-1-4@m uk-text-right@m" uk-scrollspy="cls:uk-animation-slide-right-small">
+                        <div class="uk-text-center uk-width-1-4@m uk-text-right@m uk-margin-remove-top" uk-scrollspy="cls:uk-animation-slide-right-small">
                             <a class="uk-text-small" href="#">Политика конфиденциальности</a>
                         </div>
                     </div>
