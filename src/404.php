@@ -6,14 +6,14 @@
 
 <?php get_header(); ?>
 
-    <main id="main">
+    <main class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
 
-        <section class="error-404 not-found">
-            <header class="page-header">
-                <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'themestarter' ); ?></h1>
+        <section class="uk-container uk-section-small">
+            <header>
+                <h1 class="uk-h1 uk-text-center"><?php _e( 'Oops! That page can&rsquo;t be found.', 'themestarter' ); ?></h1>
             </header>
 
-            <div class="page-content">
+            <div class="uk-text-center">
                 <p><?php _e( 'Looks like nothing was found. Maybe try a search?', 'themestarter' ); ?></p>
                 <?php get_search_form(); ?>
             </div>

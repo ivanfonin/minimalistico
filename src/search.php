@@ -6,27 +6,37 @@
 
 <?php get_header(); ?>
 
-<main role="main" uk-height-viewport="expand: true">
+<main role="main">
 
     <?php if ( have_posts() ) : ?>
 
-        <div class="uk-container uk-section-small">
-            <header>
-                <h1 class="uk-h4">
-                    <?php printf( __( 'Search Results for: %s', 'themestarter' ), get_search_query() ); ?>
-                </h1>
-            </header>
+        <div uk-height-viewport="expand: true">
+            <div class="uk-section uk-section-muted uk-section-xsmall">
+                <header class="uk-container">
+                    <h1 class="uk-text-uppercase uk-text-meta">
+                        <?php printf( __( 'Search Results for: %s', 'themestarter' ), get_search_query() ); ?>
+                    </h1>
+                </header>
+            </div>
 
-            <?php while ( have_posts() ) : the_post(); ?>
-                <?php get_template_part( 'partials/content/search' ); ?>
-            <?php endwhile; ?>
+            <div class="uk-section-small">
+                <div class="uk-container">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php get_template_part( 'partials/content/search' ); ?>
+                    <?php endwhile; ?>
+                </div>
 
-            <?php the_posts_pagination( $pagination_parameters ); ?>
+                <div class="uk-container">
+                    <?php the_posts_pagination( $pagination_parameters ); ?>
+                </div>
+            </div>
         </div>
 
     <?php else : ?>
 
-        <?php get_template_part( 'partials/content/none' ); ?>
+        <div class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+            <?php get_template_part( 'partials/content/none' ); ?>
+        </div>
 
     <?php endif; ?>
 

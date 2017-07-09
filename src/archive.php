@@ -5,28 +5,34 @@
 
 get_header(); ?>
 
-<main uk-height-viewport="expand: true">
+<main role="main">
 
     <?php if ( have_posts() ) : ?>
 
-        <div class="uk-container uk-section-small">
-            <header>
-                <?php
-                    the_archive_title( '<h1 class="uk-h4">', '</h1>' );
-                    the_archive_description( '<div>', '</div>' );
-                ?>
-            </header>
+        <div uk-height-viewport="expand: true">
+            <div class="uk-section uk-section-muted uk-section-xsmall">
+                <header class="uk-container">
+                    <?php
+                        the_archive_title( '<h1 class="uk-text-uppercase uk-text-meta">', '</h1>' );
+                        the_archive_description( '<div>', '</div>' );
+                    ?>
+                </header>
+            </div>
 
-            <?php while ( have_posts() ) : the_post(); ?>
-                <?php get_template_part( 'content', get_post_format() ); ?>
-            <?php endwhile; ?>
+            <div class="uk-container uk-section-small">
+                <?php while ( have_posts() ) : the_post(); ?>
+                    <?php get_template_part( 'content', get_post_format() ); ?>
+                <?php endwhile; ?>
 
-            <?php the_posts_pagination( $pagination_parameters ); ?>
+                <?php the_posts_pagination( $pagination_parameters ); ?>
+            </div>
         </div>
 
     <?php else : ?>
 
-        <?php get_template_part( 'partials/content/none' ); ?>
+        <div class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+            <?php get_template_part( 'partials/content/none' ); ?>
+        </div>
 
     <?php endif; ?>
 

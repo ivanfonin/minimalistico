@@ -22,7 +22,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="uk-text-center uk-width-1-2@s uk-width-1-4@m uk-text-right@s uk-margin-remove-top" uk-scrollspy="cls:uk-animation-slide-right-small">
-                            <a class="uk-text-small" href="#">Политика конфиденциальности</a>
+                            <a class="uk-text-small" href="<?php echo get_page_link(21); ?>">Политика конфиденциальности</a>
                         </div>
                     </div>
                 </div>

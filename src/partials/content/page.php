@@ -30,9 +30,6 @@
         <div>
             <?php the_content(); ?>
         </div>
-        <footer>
-            <posts></posts>
-        </footer>
     </div>
 
 </article>

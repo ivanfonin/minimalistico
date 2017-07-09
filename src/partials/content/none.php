@@ -6,9 +6,9 @@
 
 <section class="uk-container uk-section-small">
     <header>
-        <h1 class="uk-h4"><?php _e( 'Nothing Found', 'themestarter' ); ?></h1>
+        <h1 class="uk-h1 uk-text-center"><?php _e( 'Nothing Found', 'themestarter' ); ?></h1>
     </header>
-    <div class="page-content">
+    <div class="uk-text-center">
         <?php if ( is_search() ) : ?>
             <p><?php _e( 'Sorry, but nothing was found. Try other keywords.', 'themestarter' ); ?></p>
             <?php get_search_form(); ?>

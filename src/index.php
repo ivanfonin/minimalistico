@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<main uk-height-viewport="expand: true">
+<main role="main" uk-height-viewport="expand: true">
 
     <?php if ( have_posts() ) : ?>
 
