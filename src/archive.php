@@ -5,24 +5,24 @@
 
 get_header(); ?>
 
-<main id="main">
+<main uk-height-viewport="expand: true">
 
     <?php if ( have_posts() ) : ?>
 
-        <header class="page-header">
-            <?php
-                the_archive_title( '<h1 class="archive-title">', '</h1>' );
-                the_archive_description( '<div class="archive-description">', '</div>' );
-            ?>
-        </header>
+        <div class="uk-container uk-section-small">
+            <header>
+                <?php
+                    the_archive_title( '<h1 class="uk-h4">', '</h1>' );
+                    the_archive_description( '<div>', '</div>' );
+                ?>
+            </header>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+                <?php get_template_part( 'content', get_post_format() ); ?>
+            <?php endwhile; ?>
 
-            <?php get_template_part( 'content', get_post_format() ); ?>
-
-        <?php endwhile; ?>
-
-        <?php the_posts_pagination( $pagination_parameters ); ?>
+            <?php the_posts_pagination( $pagination_parameters ); ?>
+        </div>
 
     <?php else : ?>
 
@@ -32,5 +32,4 @@ get_header(); ?>
 
 </main>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

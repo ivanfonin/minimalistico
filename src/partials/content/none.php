@@ -4,9 +4,9 @@
  */
 ?>
 
-<section class="no-content not-found">
+<section class="uk-container uk-section-small">
     <header>
-        <h1 class="page-title"><?php _e( 'Nothing Found', 'themestarter' ); ?></h1>
+        <h1 class="uk-h4"><?php _e( 'Nothing Found', 'themestarter' ); ?></h1>
     </header>
     <div class="page-content">
         <?php if ( is_search() ) : ?>

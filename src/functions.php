@@ -132,19 +132,6 @@ function theme_admin_scripts() {
 add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 
 /**
- * Minimalistico require files like Sage do. :)
- *
- * The mapped array determines the code library included in your theme.
- * Add or remove files to the array as needed. Supports child theme overrides.
+ * Minimalistico theme helper files.
  */
-array_map( function ( $file ) {
-
-    $file = "inc/{$file}.php";
-
-    if ( ! locate_template( $file, true, true ) ) {
-        wp_die( sprintf(__('Error locating <code>%s</code> for inclusion.', 'themestarter'), $file), 'File not found' );
-    }
-
-    require( $file );
-
-}, ['helpers'] );
+ require("inc/helpers.php");

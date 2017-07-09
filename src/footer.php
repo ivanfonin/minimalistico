@@ -29,6 +29,8 @@
             </div>
         </footer>
 
+        <?php get_template_part( 'partials/search-modal' ); ?>
+
     </div><!-- #app -->
 <?php wp_footer(); ?>
 </body>

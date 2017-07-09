@@ -5,17 +5,17 @@
 
 get_header(); ?>
 
-<main id="main">
+<main uk-height-viewport="expand: true">
 
     <?php if ( have_posts() ) : ?>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+        <div class="uk-container uk-section-small">
+            <?php while ( have_posts() ) : the_post(); ?>
+                <?php get_template_part( 'content', get_post_format() ); ?>
+            <?php endwhile; ?>
 
-            <?php get_template_part( 'content', get_post_format() ); ?>
-
-        <?php endwhile; ?>
-
-        <?php the_posts_pagination( $pagination_parameters ); ?>
+            <?php the_posts_pagination( $pagination_parameters ); ?>
+        </div>
 
     <?php else : ?>
 
@@ -25,5 +25,5 @@ get_header(); ?>
 
 </main>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

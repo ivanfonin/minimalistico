@@ -6,23 +6,23 @@
 
 <?php get_header(); ?>
 
-<main role="main">
+<main role="main" uk-height-viewport="expand: true">
 
     <?php if ( have_posts() ) : ?>
 
-        <header class="page-header">
-            <h1 class="page-title">
-                <?php printf( __( 'Search Results for: %s', 'themestarter' ), get_search_query() ); ?>
-            </h1>
-        </header>
+        <div class="uk-container uk-section-small">
+            <header>
+                <h1 class="uk-h4">
+                    <?php printf( __( 'Search Results for: %s', 'themestarter' ), get_search_query() ); ?>
+                </h1>
+            </header>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+                <?php get_template_part( 'partials/content/search' ); ?>
+            <?php endwhile; ?>
 
-            <?php get_template_part( 'partials/content/search' ); ?>
-
-        <?php endwhile; ?>
-
-        <?php the_posts_pagination( $pagination_parameters ); ?>
+            <?php the_posts_pagination( $pagination_parameters ); ?>
+        </div>
 
     <?php else : ?>
 
@@ -32,5 +32,4 @@
 
 </main>
 
-<?php //get_sidebar(); ?>
 <?php get_footer(); ?>
