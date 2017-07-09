@@ -12,10 +12,10 @@ get_header(); ?>
         <div uk-height-viewport="expand: true">
             <div class="uk-section uk-section-muted uk-section-xsmall">
                 <header class="uk-container">
-                    <?php
-                        the_archive_title( '<h1 class="uk-text-uppercase uk-text-meta">', '</h1>' );
-                        the_archive_description( '<div>', '</div>' );
-                    ?>
+                    <h1 class="uk-text-uppercase uk-text-meta">
+                        <span uk-icon="icon: tag"></span> <?php single_cat_title( '', true ); ?>
+                    </h1>
+                    <?php the_archive_description( '<div class="uk-text-meta">', '</div>' ); ?>
                 </header>
             </div>
 

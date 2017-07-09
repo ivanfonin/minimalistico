@@ -16,44 +16,34 @@
 </head>
 <body <?php body_class(); ?>>
     <div id="app">
+        <div class="uk-offcanvas-content">
 
-        <div class="uk-navbar-container">
-            <div class="uk-container">
-                <nav class="uk-navbar" uk-navbar>
-                    <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                            <?php bloginfo( 'name' ); ?>
-                        </a>
-                        <?php if ( has_nav_menu( 'main' ) ) : ?>
-                            <?php wp_nav_menu( array(
-                                'theme_location' => 'main',
-                                'container' => false,
-                                'menu_class' => 'uk-navbar-nav uk-visible@m' ) );
-                            ?>
-                        <?php endif; ?>
-                    </div>
-                    <div class="uk-navbar-right">
-                        <div class="uk-navbar-item uk-padding-remove-left">
-                            <a id="show-search-modal" href="#search-modal" uk-toggle><span uk-icon="icon: search"></span></a>
+            <div class="uk-navbar-container">
+                <div class="uk-container">
+                    <nav class="uk-navbar" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <a class="uk-navbar-item uk-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <?php bloginfo( 'name' ); ?>
+                            </a>
+                            <?php if ( has_nav_menu( 'main' ) ) : ?>
+                                <?php wp_nav_menu( array(
+                                    'theme_location' => 'main',
+                                    'container' => false,
+                                    'menu_class' => 'uk-navbar-nav uk-visible@m' ) );
+                                ?>
+                            <?php endif; ?>
                         </div>
-                        <div class="uk-navbar-item uk-hidden@m">
-                            <a href="#"><span uk-icon="icon: menu"></span></a>
+                        <div class="uk-navbar-right">
+                            <div class="uk-navbar-item uk-padding-remove-left">
+                                <a id="show-search-modal" href="#search-modal" uk-toggle><span uk-icon="icon: search"></span></a>
+                            </div>
+                            <div class="uk-navbar-item uk-hidden@m">
+                                <a href="#offcanvas" uk-toggle><span uk-icon="icon: menu"></span></a>
+                            </div>
+                            <div class="uk-navbar-item uk-visible@m">
+                                <a href="#" class="uk-button uk-button-default uk-box-shadow-medium uk-box-shadow-hover-small">Оставить заявку</a>
+                            </div>
                         </div>
-                        <div class="uk-navbar-item uk-visible@m">
-                            <a href="#" class="uk-button uk-button-default uk-box-shadow-medium uk-box-shadow-hover-small">Оставить заявку</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-        <div id="search-modal" class="uk-modal-full" uk-modal>
-            <div class="uk-modal-dialog">
-                <button class="uk-modal-close-full uk-close-small" type="button" uk-close></button>
-                <div class="uk-grid-collapse uk-flex-center" uk-grid>
-                    <div class="uk-flex uk-flex-center uk-flex-middle uk-width-large" uk-height-viewport>
-                        <?php get_search_form(); ?>
-                    </div>
+                    </nav>
                 </div>
             </div>
-        </div>

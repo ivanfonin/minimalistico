@@ -9,23 +9,25 @@
 if ( ! function_exists( 'theme_post_meta' ) ) {
 
     function theme_post_meta() {
-        $posted_on = sprintf( '<time class="date uk-margin-right" datetime="%1$s">%2$s</time>',
+        $posted_on = sprintf( '<time class="date uk-margin-right uk-button uk-button-link uk-link-reset" datetime="%1$s">%2$s</time>',
                              esc_attr( get_the_date('c') ),
                              esc_html( get_the_date() )
         );
 
-        $author = sprintf( '<a class="author-link uk-margin-right" href="%1$s">%2$s</a>',
+        $author = sprintf( '<a class="author-link uk-margin-right uk-button uk-button-link" href="%1$s">%2$s</a>',
                           esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
                           esc_html( get_the_author() )
         );
 
-        $theme_post_meta = '<span class="posted-on">' . $posted_on . '</span><span class="author">' . $author . '</span>';
+        $theme_post_meta = '<span uk-icon="icon: clock; ratio: .7"></span> <span class="posted-on">' . $posted_on . '</span> <span uk-icon="icon: user; ratio: .7"></span> <span class="author">' . $author . '</span>';
 
-        $categories_list = get_the_category_list( __( ', ', 'themestarter' ) );
+        $categories_list = '<span class="uk-button uk-button-link">';
+        $categories_list .= get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'themestarter' ) );
+        $categories_list .= '</span>';
 
         if ( $categories_list ) {
-            echo '<p class="uk-text-small uk-text-meta uk-text-uppercase uk-margin-small-bottom">';
-                echo $theme_post_meta . '<span class="categories">' . $categories_list . '</span>';
+            echo '<p class="uk-text-meta uk-margin-small-bottom">';
+                echo $theme_post_meta . '<span uk-icon="icon: tag; ratio: .7"></span> <span class="categories">' . $categories_list . '</span>';
             echo '</p>';
         } else {
             echo '<p class="uk-text-small uk-text-meta uk-text-uppercase uk-margin-small-bottom">';
@@ -42,10 +44,10 @@ if ( ! function_exists( 'theme_post_meta' ) ) {
 if ( ! function_exists( 'theme_post_footer_meta' ) ) {
 
     function theme_post_footer_meta() {
-        $tags_list = get_the_tag_list( '', __( ', ', 'themestarter' ) );
+        $tag_list = get_the_tag_list( '<span uk-icon="icon: hashtag; ratio: .7"></span><span class="tags"><span class="uk-button uk-button-link">', '</span>, <span class="uk-button uk-button-link">', '</span></span>' );
 
-        if ( $tags_list ) {
-            printf( '<span class="tags">' . __( 'Tags: %1$s', 'themestarter' ) . '</span>', $tags_list );
+        if ( $tag_list ) {
+            echo $tag_list;
         }
     }
 

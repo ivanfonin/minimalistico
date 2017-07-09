@@ -9,14 +9,14 @@
         <?php if ( has_post_thumbnail() ) : ?>
             <figure class="post-thumbnail"><?php the_post_thumbnail(); ?></figure>
         <?php endif; ?>
-        
+
         <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
-        
-        <div class="post-meta">
+
+        <div class="uk-article-meta">
             <?php theme_post_meta(); ?>
         </div>
     </header>
-    <div class="post-content">
+    <div>
         <?php the_content(); ?>
     </div>
     <footer class="post-footer">
