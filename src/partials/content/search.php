@@ -27,10 +27,12 @@
             </div>
         <?php endif; ?>
     </header>
-    <div>
-        <?php the_excerpt(); ?>
+    <div class="uk-text-small">
+        <p class="uk-margin-small-bottom">
+            <?php echo wp_strip_all_tags( get_the_excerpt(), true ); ?>
+        </p>
     </div>
-    <footer class="uk-grid-small uk-child-width-auto" uk-grid>
+    <footer class="uk-text-meta">
         <?php theme_post_footer_meta(); ?>
     </footer>
 </article>

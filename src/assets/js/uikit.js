@@ -9,7 +9,7 @@ UIkit.use(Icons);
 //UIkit.notification('Hello world.');
 
 // Sticky navbar.
-let stickyNavbar = UIkit.sticky('#app > .uk-navbar-container', {
+let sticky = UIkit.sticky('#app > div > .uk-navbar-container', {
     showOnUp: true,
     animation: 'uk-animation-slide-top',
     clsActive: 'uk-navbar-sticky-active'
@@ -19,7 +19,7 @@ let stickyNavbar = UIkit.sticky('#app > .uk-navbar-container', {
 // Should use components 'shown' event, but it is not firing.
 // Cannot figure how to deal with it right now.
 // Seems that it is a bug - https://github.com/uikit/uikit/issues/2742
-var $searchInput = $('#search-modal form input[type="search"]');
+let $searchInput = $('#search-modal form input[type="search"]');
 
 function focusOnSearchInputField() {
     $searchInput.focus();
@@ -28,8 +28,4 @@ function focusOnSearchInputField() {
 $(document).on('click', '#show-search-modal', function(e) {
     e.preventDefault();
     setTimeout( focusOnSearchInputField, 100 );
-});
-
-$('#search-modal').on('shown', function() {
-    console.log('Shown event is fired.');
 });

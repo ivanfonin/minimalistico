@@ -63,10 +63,10 @@ function theme_widgets_init() {
         'name' => __( 'Main Sidebar', 'themestarter' ),
         'id' => 'main-sidebar',
         'description' => '',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget uk-card uk-box-shadow-medium uk-box-shadow-hover-small uk-card-body uk-margin-medium-bottom %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
+        'before_title' => '<h3 class="uk-h4">',
+        'after_title' => '</h3>',
     ) );
 }
 add_action( 'widgets_init', 'theme_widgets_init' );
@@ -135,3 +135,41 @@ add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
  * Minimalistico theme helper files.
  */
  require("inc/helpers.php");
+
+/**
+ * Theme excerpt length.
+ */
+function theme_excerpt_length( $length ) {
+	return 10;
+}
+add_filter( 'excerpt_length', 'theme_excerpt_length', 99 );
+
+/**
+ * Theme excerpt more text.
+ */
+function theme_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'theme_excerpt_more' );
+
+/**
+ * Add UIkit to archive title.
+ */
+function theme_archive_title( $title ) {
+    $html_start = '<span class="uk-text-meta uk-button-text">';
+    $html_end = '</span>';
+    if ( is_category() ) {
+        $title = single_cat_title( '<span uk-icon="icon: tag"></span> ', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '<span uk-icon="icon: hashtag"></span> ', false );
+    } elseif ( is_author() ) {
+        $title = '<span uk-icon="icon: user"></span> <span>' . get_the_author() . '</span>';
+    } elseif ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '<span uk-icon="icon: tag"></span> ', false );
+    } else {
+        $title = __( 'Archives', 'themestarter' );
+    }
+
+    return $html_start.$title.$html_end;
+}
+add_filter( 'get_the_archive_title', 'theme_archive_title' );

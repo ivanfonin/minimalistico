@@ -10,9 +10,21 @@ get_header(); ?>
     <?php if ( have_posts() ) : ?>
 
         <div class="uk-container uk-section-small">
-            <?php while ( have_posts() ) : the_post(); ?>
-                <?php get_template_part( 'content', get_post_format() ); ?>
-            <?php endwhile; ?>
+
+            <div class="uk-grid">
+                <div class="uk-width-3-4@m">
+                    <div class="uk-grid-medium uk-child-width-expand@s" uk-grid uk-height-match="target: > article; row: false">
+                        <?php while ( have_posts() ) : the_post(); ?>
+                            <?php get_template_part( 'content', get_post_format() ); ?>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+                <div class="uk-width-1-4@m">
+                    <div class="uk-grid-medium">
+                        <?php get_sidebar(); ?>
+                    </div>
+                </div>
+            </div>
 
             <?php the_posts_pagination( $pagination_parameters ); ?>
         </div>
@@ -25,5 +37,5 @@ get_header(); ?>
 
 </main>
 
-<?php //get_sidebar(); ?>
+
 <?php get_footer(); ?>
