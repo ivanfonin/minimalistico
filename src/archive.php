@@ -34,9 +34,9 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-
-                <?php the_posts_pagination( $pagination_parameters ); ?>
             </div>
+
+            <?php print_theme_posts_pagination(); ?>
         </div>
 
     <?php else : ?>

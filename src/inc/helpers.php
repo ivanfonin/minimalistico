@@ -72,15 +72,24 @@ if ( ! function_exists( 'theme_post_footer_meta' ) ) {
 }
 
 /**
- * Posts pagination parameters - the_post_pagination( $pagination_parameters );
+ * Wrap posts pagination with special markup to style it.
+ * Display pagination only if there is more than one page.
  */
-$pagination_parameters = array(
-    'end_size' => 2,
-    'mid_size' => 2,
-    'prev_text' => '<',
-    'next_text' => '>',
-    'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
-);
+function print_theme_posts_pagination() {
+    if ( $GLOBALS['wp_query']->max_num_pages > 1 ) { ?>
+        <div class="uk-section uk-section-muted uk-section-xsmall">
+            <div class="uk-container">
+                <?php the_posts_pagination( array(
+                    'end_size' => 2,
+                    'mid_size' => 2,
+                    'prev_text' => '<',
+                    'next_text' => '>',
+                    'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
+                ) ); ?>
+            </div>
+        </div>
+    <?php }
+}
 
 /**
  * Display comment navigation links.

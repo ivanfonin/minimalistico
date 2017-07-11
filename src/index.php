@@ -10,7 +10,6 @@ get_header(); ?>
     <?php if ( have_posts() ) : ?>
 
         <div class="uk-container uk-section-small">
-
             <div class="uk-grid">
                 <div class="uk-width-3-4@m">
                     <div class="uk-grid-medium uk-child-width-expand@s" uk-grid uk-height-match="target: > article; row: false">
@@ -25,9 +24,9 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-
-            <?php the_posts_pagination( $pagination_parameters ); ?>
         </div>
+
+        <?php print_theme_posts_pagination(); ?>
 
     <?php else : ?>
 
