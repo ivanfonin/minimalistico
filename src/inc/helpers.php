@@ -75,7 +75,7 @@ if ( ! function_exists( 'theme_post_footer_meta' ) ) {
  * Wrap posts pagination with special markup to style it.
  * Display pagination only if there is more than one page.
  */
-function print_theme_posts_pagination() {
+function theme_print_posts_pagination() {
     if ( $GLOBALS['wp_query']->max_num_pages > 1 ) { ?>
         <div class="uk-section uk-section-muted uk-section-xsmall">
             <div class="uk-container">

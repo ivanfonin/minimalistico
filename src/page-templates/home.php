@@ -47,6 +47,6 @@ __( 'Home Page', 'themestarter' ); ?>
         <?php endwhile; ?>
     </main>
 
-    <?php locate_template( 'partials/sections/call-to-action.php', true, true ); ?>
+    <?php locate_template( 'partials/widgets/call-to-action.php', true, true ); ?>
 
 <?php get_footer(); ?>

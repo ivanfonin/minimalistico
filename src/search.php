@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <?php print_theme_posts_pagination(); ?>
+            <?php theme_print_posts_pagination(); ?>
         </div>
 
     <?php else : ?>

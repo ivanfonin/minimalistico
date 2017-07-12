@@ -11,11 +11,9 @@
 }
 
 .screen-reader-text:focus {
-    background-color: #f1f1f1;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    background-color: $global-background;
+    -webkit-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.15);
     clip: auto !important;
     color: $global-link-color;
     display: block;
@@ -24,11 +22,11 @@
     font-size: 0.875rem;
     font-weight: 400;
     height: auto;
-    left: 5px;
+    left: 7px;
     line-height: normal;
     padding: 15px 23px 14px;
     text-decoration: none;
-    top: 5px;
+    top: 7px;
     width: auto;
     z-index: 100000; /* Above WP toolbar. */
 }
