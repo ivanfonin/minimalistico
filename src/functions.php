@@ -100,6 +100,14 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 /**
+ * Handles JavaScript detection.
+ */
+function theme_javascript_detection() {
+    echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action( 'wp_head', 'theme_javascript_detection', 0 );
+
+/**
  * Enqueue theme scripts and styles.
  */
 function theme_scripts_and_styles() {
