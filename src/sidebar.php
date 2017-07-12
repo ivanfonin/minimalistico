@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'main-sidebar' ) ) : ?>
+<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
     <aside class="sidebar" role="complementary">
         <?php theme_print_main_sidebar_with_uikit_class(); ?>
     </aside>

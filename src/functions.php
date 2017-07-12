@@ -76,8 +76,8 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
  */
 function theme_widgets_init() {
     register_sidebar( array(
-        'name' => __( 'Main Sidebar', 'themestarter' ),
-        'id' => 'main-sidebar',
+        'name' => __( 'Blog Sidebar', 'themestarter' ),
+        'id' => 'blog-sidebar',
         'description' => '',
         'before_widget' => '<div id="%1$s" class="widget uk-card uk-box-shadow-medium uk-box-shadow-hover-small uk-card-body uk-margin-medium-bottom %2$s">',
         'after_widget' => '</div>',
