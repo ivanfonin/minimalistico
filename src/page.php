@@ -9,7 +9,7 @@
     <main role="main">
         <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php locate_template( 'partials/content/page.php', true, true ); ?>
+            <?php get_template_part( 'partials/content/page' ); ?>
 
             <?php if ( comments_open() || get_comments_number() ) : ?>
                 <?php comments_template(); ?>

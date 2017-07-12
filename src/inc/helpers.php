@@ -82,8 +82,8 @@ function print_theme_posts_pagination() {
                 <?php the_posts_pagination( array(
                     'end_size' => 2,
                     'mid_size' => 2,
-                    'prev_text' => '<',
-                    'next_text' => '>',
+                    'prev_text' => __( 'Previous', 'themestarter' ),
+                    'next_text' => __( 'Next', 'themestarter' ),
                     'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
                 ) ); ?>
             </div>

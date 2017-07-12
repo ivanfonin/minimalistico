@@ -3,6 +3,7 @@
  * Footer template file.
  */
 ?>
+            </div> <!-- #content -->
 
             <footer class="uk-section uk-section-default uk-padding-remove-bottom uk-padding-remove-top">
                 <div class="uk-container">
@@ -53,7 +54,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> <!-- .uk-offcanvas-content -->
 
         <?php get_template_part( 'partials/search-modal' ); ?>
 
