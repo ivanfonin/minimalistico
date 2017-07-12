@@ -37,6 +37,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
             'image', 'gallery', 'video', 'audio', 'quote', 'link',
         ) );
 
+        // Add theme support for Custom Logo.
         function theme_custom_logo_setup() {
             $defaults = array(
                 'height'      => 80,
@@ -48,6 +49,9 @@ if ( ! function_exists( 'theme_setup' ) ) {
             add_theme_support( 'custom-logo', $defaults );
         }
         add_action( 'after_setup_theme', 'theme_custom_logo_setup' );
+
+        // Add theme support for selective refresh for widgets.
+        add_theme_support( 'customize-selective-refresh-widgets' );
 
     }
 
@@ -160,7 +164,11 @@ add_filter( 'excerpt_length', 'theme_excerpt_length', 99 );
  * Change theme excerpt more text.
  */
 function theme_excerpt_more( $more ) {
-    return '...';
+    if ( is_admin() ) {
+        return $more;
+    }
+
+    return '&hellip;';
 }
 add_filter( 'excerpt_more', 'theme_excerpt_more' );
 
