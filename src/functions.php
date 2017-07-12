@@ -37,6 +37,18 @@ if ( ! function_exists( 'theme_setup' ) ) {
             'image', 'gallery', 'video', 'audio', 'quote', 'link',
         ) );
 
+        function theme_custom_logo_setup() {
+            $defaults = array(
+                'height'      => 80,
+                'width'       => 160,
+                'flex-height' => true,
+                'flex-width'  => true,
+                'header-text' => array( 'site-title', 'site-description' ),
+            );
+            add_theme_support( 'custom-logo', $defaults );
+        }
+        add_action( 'after_setup_theme', 'theme_custom_logo_setup' );
+
     }
 
 }
@@ -132,12 +144,12 @@ function theme_admin_scripts() {
 add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 
 /**
- * Minimalistico theme helper files.
+ * Theme helper files.
  */
  require("inc/helpers.php");
 
 /**
- * Theme excerpt length.
+ * Change theme excerpt length.
  */
 function theme_excerpt_length( $length ) {
 	return 10;
@@ -145,7 +157,7 @@ function theme_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'theme_excerpt_length', 99 );
 
 /**
- * Theme excerpt more text.
+ * Change theme excerpt more text.
  */
 function theme_excerpt_more( $more ) {
     return '...';
@@ -153,7 +165,7 @@ function theme_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'theme_excerpt_more' );
 
 /**
- * Add UIkit to archive title.
+ * Add UIkit icons to archive title.
  */
 function theme_archive_title( $title ) {
     $html_start = '<span class="uk-text-meta uk-button-text">';
