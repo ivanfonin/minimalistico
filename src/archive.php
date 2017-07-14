@@ -24,7 +24,7 @@ get_header(); ?>
                     <div class="uk-width-3-4@m">
                         <div class="uk-grid-medium uk-child-width-expand@s" uk-grid uk-height-match="target: > article; row: false">
                             <?php while ( have_posts() ) : the_post(); ?>
-                                <?php get_template_part( 'content', get_post_format() ); ?>
+                                <?php get_template_part( 'partials/content', get_post_format() ); ?>
                             <?php endwhile; ?>
                         </div>
                     </div>
