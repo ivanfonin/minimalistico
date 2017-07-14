@@ -16,10 +16,9 @@
 </head>
 <body <?php body_class(); ?>>
     <div id="app">
+        <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'themestarter' ); ?></a>
+
         <div class="uk-offcanvas-content">
-
-            <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'themestarter' ); ?></a>
-
             <div class="uk-navbar-container uk-box-shadow-small">
                 <div class="uk-container">
                     <nav class="uk-navbar" uk-navbar>

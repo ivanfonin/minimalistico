@@ -10,7 +10,7 @@ if ( ! function_exists( 'theme_print_main_sidebar_with_uikit_class' ) ) {
 
     function theme_print_main_sidebar_with_uikit_class() {
         ob_start();
-        dynamic_sidebar( 'main-sidebar' );
+        dynamic_sidebar( 'blog-sidebar' );
         $sidebar_html = ob_get_contents();
         ob_end_clean();
 
