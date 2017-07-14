@@ -9,6 +9,17 @@ function woocommerce_support() {
 //add_action( 'after_setup_theme', 'woocommerce_support' );
 
 /**
+ * Add UIkit uk-active class for active element.
+ */
+function theme_active_nav_class ( $classes, $item ) {
+     if ( in_array( 'current-menu-item', $classes ) ) {
+         $classes[] = 'uk-active ';
+     }
+     return $classes;
+}
+add_filter( 'nav_menu_css_class' , 'theme_active_nav_class' , 10 , 2 );
+
+/**
  * Remove some header tags and emoji.
  */
 remove_action( 'wp_head', 'rsd_link' );

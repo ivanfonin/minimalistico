@@ -4,17 +4,6 @@
  */
 
 /**
- * Add UIkit uk-active class for active element.
- */
-function theme_active_nav_class ( $classes, $item ) {
-     if ( in_array( 'current-menu-item', $classes ) ) {
-         $classes[] = 'uk-active ';
-     }
-     return $classes;
-}
-add_filter( 'nav_menu_css_class' , 'theme_active_nav_class' , 10 , 2 );
-
-/**
  * Add uk-list class to ul elements inside blog sidebar widgets.
  */
 if ( ! function_exists( 'theme_print_blog_sidebar' ) ) {
@@ -51,22 +40,43 @@ if ( ! function_exists( 'theme_print_page_sidebar' ) ) {
 }
 
 /**
+* Add support for the Pageviews plugin.
+*/
+if ( ! function_exists( 'theme_post_meta' ) ) {
+
+    function theme_show_pageviews() {
+       if ( ! has_action( 'pageviews' ) )
+           return;
+
+       $post = get_post(); ?>
+
+       <span class="uk-text-small uk-text-bold">
+           <span uk-icon="icon: forward; ratio: .7"></span> <a href="<?php the_permalink(); ?>" class="uk-margin-small-right uk-button uk-button-link"><?php do_action( 'pageviews' ); ?></a>
+       </span>
+
+       <?php
+    }
+
+}
+
+/**
  * Post meta info - publishing date, author and categories list.
  */
 if ( ! function_exists( 'theme_post_meta' ) ) {
 
     function theme_post_meta() {
-        $posted_on = sprintf( '<time class="date uk-margin-right uk-button uk-button-link uk-link-reset" datetime="%1$s">%2$s</time>',
+        $posted_on = sprintf( '<time class="date uk-margin-small-right uk-button uk-button-link" datetime="%1$s">%2$s</time>',
                              esc_attr( get_the_date('c') ),
                              esc_html( get_the_date() )
         );
 
-        $author = sprintf( '<a class="author-link uk-margin-right uk-button uk-button-link" href="%1$s">%2$s</a>',
+        $author = sprintf( '<a class="author-link uk-margin-small-right uk-button uk-button-link" href="%1$s">%2$s</a>',
                           esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
                           esc_html( get_the_author() )
         );
 
         $theme_post_meta = '<span uk-icon="icon: clock; ratio: .7"></span> <span class="posted-on">' . $posted_on . '</span> <span uk-icon="icon: user; ratio: .7"></span> <span class="author">' . $author . '</span>';
+
 
         $categories_list = '<span class="uk-button uk-button-link">';
         $categories_list .= get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'themestarter' ) );
@@ -74,11 +84,13 @@ if ( ! function_exists( 'theme_post_meta' ) ) {
 
         if ( $categories_list ) {
             echo '<p class="uk-text-meta uk-margin-small-bottom">';
-                echo $theme_post_meta . '<span uk-icon="icon: tag; ratio: .7"></span> <span class="categories">' . $categories_list . '</span>';
+                echo $theme_post_meta . '<span uk-icon="icon: tag; ratio: .7"></span> <span class="categories uk-margin-small-right">' . $categories_list . '</span>';
+                theme_show_pageviews();
             echo '</p>';
         } else {
-            echo '<p class="uk-text-small uk-text-meta uk-text-uppercase uk-margin-small-bottom">';
+            echo '<p class="uk-text-meta uk-text-uppercase uk-margin-small-bottom">';
                 echo $theme_post_meta;
+                theme_show_pageviews();
             echo '</p>';
         }
     }
@@ -102,22 +114,27 @@ if ( ! function_exists( 'theme_post_footer_meta' ) ) {
 
 /**
  * Wrap posts pagination with special markup to style it.
- * Display pagination only if there is more than one page.
  */
 function theme_print_posts_pagination() {
-    if ( $GLOBALS['wp_query']->max_num_pages > 1 ) { ?>
-        <div class="uk-section uk-section-muted uk-section-xsmall">
-            <div class="uk-container">
-                <?php the_posts_pagination( array(
-                    'end_size' => 2,
-                    'mid_size' => 2,
-                    'prev_text' => __( 'Previous', 'themestarter' ),
-                    'next_text' => __( 'Next', 'themestarter' ),
-                    'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
-                ) ); ?>
-            </div>
+
+    // Display pagination only if there is more than one page.
+    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	} ?>
+
+    <div class="uk-section uk-section-muted uk-section-xsmall">
+        <div class="uk-container">
+            <?php the_posts_pagination( array(
+                'end_size' => 2,
+                'mid_size' => 2,
+                'prev_text' => __( 'Previous', 'themestarter' ),
+                'next_text' => __( 'Next', 'themestarter' ),
+                'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
+            ) ); ?>
         </div>
-    <?php }
+    </div>
+
+    <?php
 }
 
 /**
