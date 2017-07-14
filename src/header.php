@@ -30,8 +30,10 @@
                                 <?php wp_nav_menu( array(
                                     'theme_location' => 'main',
                                     'container' => false,
-                                    'menu_class' => 'uk-navbar-nav uk-visible@m' ) );
-                                ?>
+                                    'menu_class' => 'uk-navbar-nav uk-visible@m',
+                                    'walker' => new Theme_Navbar_Walker(),
+                                    'depth' => 2,
+                                ) ); ?>
                             <?php endif; ?>
                         </div>
                         <div class="uk-navbar-right">

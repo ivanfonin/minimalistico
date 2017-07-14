@@ -4,6 +4,17 @@
  */
 
 /**
+ * Add UIkit uk-active class for active element.
+ */
+function theme_active_nav_class ( $classes, $item ) {
+     if ( in_array( 'current-menu-item', $classes ) ) {
+         $classes[] = 'uk-active ';
+     }
+     return $classes;
+}
+add_filter( 'nav_menu_css_class' , 'theme_active_nav_class' , 10 , 2 );
+
+/**
  * Add uk-list class to ul elements inside main sidebar widgets.
  */
 if ( ! function_exists( 'theme_print_main_sidebar_with_uikit_class' ) ) {

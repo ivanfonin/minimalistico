@@ -158,7 +158,7 @@ add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 /**
  * Theme helper files.
  */
- require("inc/helpers.php");
+require 'inc/helpers.php';
 
 /**
  * Change theme excerpt length.
@@ -201,3 +201,11 @@ function theme_archive_title( $title ) {
     return $html_start.$title.$html_end;
 }
 add_filter( 'get_the_archive_title', 'theme_archive_title' );
+
+/**
+ * Require Navbar Walker class.
+ * And require Offcanvas Nav Walker class.
+ * Classes generate UIkit v3 navbar markup and nav in offcanvas markup.
+ */
+require 'inc/Theme_Navbar_Walker.php';
+require 'inc/Theme_Offcanvas_Nav_Walker.php';

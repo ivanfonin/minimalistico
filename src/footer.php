@@ -18,8 +18,10 @@
                                         'theme_location' => 'main',
                                         'container' => 'nav',
                                         'container_class' => 'uk-navbar',
-                                        'menu_class' => 'uk-navbar-nav uk-navbar-center' )
-                                    ); ?>
+                                        'menu_class' => 'uk-navbar-nav uk-navbar-center',
+                                        'walker' => new Theme_Navbar_Walker(),
+                                        'depth' => 1,
+                                    ) ); ?>
                                 <?php endif; ?>
                             </div>
                             <div class="uk-text-center uk-width-1-2@s uk-width-1-4@m uk-text-right@s uk-margin-remove-top" uk-scrollspy="cls:uk-animation-slide-right-small">
@@ -30,26 +32,20 @@
                 </div>
             </footer>
 
-            <div id="offcanvas" uk-offcanvas="flip: true; overlay: true">
+            <div id="offcanvas" uk-offcanvas="overlay: true">
                 <div class="uk-offcanvas-bar">
 
                     <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                    <ul class="uk-nav uk-nav-default">
-                        <li class="uk-active"><a href="#">Блог</a></li>
-                        <li class="uk-parent">
-                            <a href="#">Категории</a>
-                            <ul class="uk-nav-sub">
-                                <li><a href="#">Мода</a></li>
-                                <li><a href="#">Дизайн</a></li>
-                            </ul>
-                        </li>
-                        <li class="uk-nav-header">Контакты</li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> +7 926 903 72 30</a></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> info@webminimalism.ru</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> http://webminimalism.ru</a></li>
-                    </ul>
+                    <?php if ( has_nav_menu( 'main' ) ) : ?>
+                        <?php wp_nav_menu( array(
+                            'theme_location' => 'main',
+                            'container' => false,
+                            'menu_class' => 'uk-nav uk-nav-default',
+                            'walker' => new Theme_Offcanvas_Nav_Walker(),
+                            'depth' => 2,
+                        ) ); ?>
+                    <?php endif; ?>
 
                 </div>
             </div>
