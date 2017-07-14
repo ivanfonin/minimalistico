@@ -13,14 +13,14 @@
                                 <span class="uk-text-small">&copy; 2014-<?php echo date('Y'); ?>,</span> <a class="uk-text-small" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">«<?php bloginfo( 'name' ); ?>»</a>
                             </div>
                             <div class="uk-width-1-2@m uk-visible@m" uk-scrollspy="cls:uk-animation-slide-bottom-small">
-                                <?php if ( has_nav_menu( 'main' ) ) : ?>
+                                <?php if ( has_nav_menu( 'social' ) ) : ?>
                                     <?php wp_nav_menu( array(
-                                        'theme_location' => 'main',
+                                        'theme_location' => 'social',
                                         'container' => 'nav',
                                         'container_class' => 'uk-navbar',
                                         'menu_class' => 'uk-navbar-nav uk-navbar-center',
-                                        'walker' => new Theme_Navbar_Walker(),
-                                        'depth' => 1,
+                                        'link_before' => '<span class="uk-hidden">',
+                                        'link_after' => '</span>',
                                     ) ); ?>
                                 <?php endif; ?>
                             </div>

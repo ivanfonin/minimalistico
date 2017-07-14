@@ -29,4 +29,5 @@ class Theme_Offcanvas_Nav_Walker extends Walker_Nav_Menu {
         // Build HTML for output.
         $output .= "\n" . $indent . '<ul class="' . $class_names . '">' . "\n";
     }
+
 }

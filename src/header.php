@@ -38,13 +38,22 @@
                         </div>
                         <div class="uk-navbar-right">
                             <div class="uk-navbar-item uk-padding-remove-left">
-                                <a id="show-search-modal" href="#search-modal" uk-toggle><span uk-icon="icon: search"></span></a>
+                                <a id="show-search-modal" href="#search-modal" uk-toggle uk-icon="icon: search">
+                                    <span class="screen-reader-text"><?php _e( 'Search', 'themestarter' ); ?></span>
+                                </a>
                             </div>
+                            <?php if ( has_nav_menu( 'social' ) ) : ?>
+                                <?php wp_nav_menu( array(
+                                    'theme_location' => 'social',
+                                    'container' => 'nav',
+                                    'container_class' => 'uk-navbar',
+                                    'menu_class' => 'uk-navbar-nav uk-navbar-center',
+                                    'link_before' => '<span class="uk-hidden">',
+                                    'link_after' => '</span>',
+                                ) ); ?>
+                            <?php endif; ?>
                             <div class="uk-navbar-item uk-hidden@m">
                                 <a href="#offcanvas" uk-toggle><span uk-icon="icon: menu"></span></a>
-                            </div>
-                            <div class="uk-navbar-item uk-visible@m">
-                                <a href="#" class="uk-button uk-button-default uk-box-shadow-medium uk-box-shadow-hover-small">Оставить заявку</a>
                             </div>
                         </div>
                     </nav>

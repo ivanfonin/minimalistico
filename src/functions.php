@@ -25,6 +25,7 @@ if ( ! function_exists( 'theme_setup' ) ) {
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
             'main' => __( 'Main Menu', 'themestarter' ),
+            'social' => __( 'Social Menu', 'themestarter' ),
         ) );
 
         // Output valid HTML5 for search form, comment form, comments and gallery.
@@ -67,14 +68,6 @@ add_action( 'after_setup_theme', 'theme_setup' );
 add_editor_style( get_template_directory_uri() . '/assets/css/admin/editor-style.css' );
 
 /**
-  * Declare WooCommerce suppor.
-  */
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
-add_action( 'after_setup_theme', 'woocommerce_support' );
-
-/**
  * Register widget areas.
  */
 function theme_widgets_init() {
@@ -99,26 +92,6 @@ function theme_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'theme_widgets_init' );
-
-/**
- * Remove some header tags and emoji.
- */
-remove_action( 'wp_head', 'rsd_link' );
-remove_action( 'wp_head', 'wp_generator');
-remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-remove_action( 'wp_head', 'wlwmanifest_link');
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
-/**
- * Handles JavaScript detection.
- */
-function theme_javascript_detection() {
-    echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-}
-add_action( 'wp_head', 'theme_javascript_detection', 0 );
 
 /**
  * Enqueue theme scripts and styles.
@@ -151,14 +124,6 @@ function theme_scripts_and_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_scripts_and_styles' );
 
 /**
- * Don't display the front-end admin bar for non administrators.
- */
-function theme_show_admin_bar_for_admins_only( $content ) {
-    return ( current_user_can( 'administrator' ) ) ? $content : false;
-}
-add_filter( 'show_admin_bar' , 'theme_show_admin_bar_for_admins_only');
-
-/**
  * Enqueue custom admin scripts.
  */
 function theme_admin_scripts() {
@@ -169,51 +134,14 @@ function theme_admin_scripts() {
 add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 
 /**
- * Theme helper files.
+ * Theme template functions.
  */
-require 'inc/helpers.php';
+require 'inc/theme-template-functions.php';
 
 /**
- * Change theme excerpt length.
+ * Theme hooks.
  */
-function theme_excerpt_length( $length ) {
-	return 10;
-}
-add_filter( 'excerpt_length', 'theme_excerpt_length', 99 );
-
-/**
- * Change theme excerpt more text.
- */
-function theme_excerpt_more( $more ) {
-    if ( is_admin() ) {
-        return $more;
-    }
-
-    return '&hellip;';
-}
-add_filter( 'excerpt_more', 'theme_excerpt_more' );
-
-/**
- * Add UIkit icons to archive title.
- */
-function theme_archive_title( $title ) {
-    $html_start = '<span class="uk-text-meta uk-button-text">';
-    $html_end = '</span>';
-    if ( is_category() ) {
-        $title = single_cat_title( '<span uk-icon="icon: tag"></span> ', false );
-    } elseif ( is_tag() ) {
-        $title = single_tag_title( '<span uk-icon="icon: hashtag"></span> ', false );
-    } elseif ( is_author() ) {
-        $title = '<span uk-icon="icon: user"></span> <span>' . get_the_author() . '</span>';
-    } elseif ( is_post_type_archive() ) {
-        $title = post_type_archive_title( '<span uk-icon="icon: tag"></span> ', false );
-    } else {
-        $title = __( 'Archives', 'themestarter' );
-    }
-
-    return $html_start.$title.$html_end;
-}
-add_filter( 'get_the_archive_title', 'theme_archive_title' );
+require 'inc/theme-hooks.php';
 
 /**
  * Require Navbar Walker class.
