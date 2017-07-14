@@ -15,13 +15,31 @@ function theme_active_nav_class ( $classes, $item ) {
 add_filter( 'nav_menu_css_class' , 'theme_active_nav_class' , 10 , 2 );
 
 /**
- * Add uk-list class to ul elements inside main sidebar widgets.
+ * Add uk-list class to ul elements inside blog sidebar widgets.
  */
-if ( ! function_exists( 'theme_print_main_sidebar_with_uikit_class' ) ) {
+if ( ! function_exists( 'theme_print_blog_sidebar' ) ) {
 
-    function theme_print_main_sidebar_with_uikit_class() {
+    function theme_print_blog_sidebar() {
         ob_start();
         dynamic_sidebar( 'blog-sidebar' );
+        $sidebar_html = ob_get_contents();
+        ob_end_clean();
+
+        $theme_sidebar_with_uikit_ul_class = str_replace("<ul>", '<ul class="uk-list">', $sidebar_html);
+
+        echo $theme_sidebar_with_uikit_ul_class;
+    }
+
+}
+
+/**
+ * Add uk-list class to ul elements inside page sidebar widgets.
+ */
+if ( ! function_exists( 'theme_print_page_sidebar' ) ) {
+
+    function theme_print_page_sidebar() {
+        ob_start();
+        dynamic_sidebar( 'page-sidebar' );
         $sidebar_html = ob_get_contents();
         ob_end_clean();
 

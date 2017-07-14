@@ -87,6 +87,16 @@ function theme_widgets_init() {
         'before_title' => '<h3 class="uk-h4">',
         'after_title' => '</h3>',
     ) );
+
+    register_sidebar( array(
+        'name' => __( 'Page Sidebar', 'themestarter' ),
+        'id' => 'page-sidebar',
+        'description' => '',
+        'before_widget' => '<div id="%1$s" class="widget uk-card uk-box-shadow-medium uk-box-shadow-hover-small uk-card-body uk-margin-medium-bottom %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="uk-h4">',
+        'after_title' => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'theme_widgets_init' );
 
