@@ -1,12 +1,24 @@
 <?php
 
 /**
-  * Declare WooCommerce suppor.
-  */
+ * Declare WooCommerce support.
+ */
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 //add_action( 'after_setup_theme', 'woocommerce_support' );
+
+/**
+ * Move comment field to bottom in the comments form.
+ */
+function theme_move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+
+	return $fields;
+}
+add_filter( 'comment_form_fields', 'theme_move_comment_field_to_bottom' );
 
 /**
  * Add UIkit uk-active class for active element.

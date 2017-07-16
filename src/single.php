@@ -33,11 +33,9 @@ get_header(); ?>
                     <div class="uk-grid-medium">
                         <?php get_template_part( 'partials/content/single' ); ?>
 
-                        <div class="uk-section-small">
-                            <?php if ( comments_open() || get_comments_number() ) : ?>
-                                <?php comments_template(); ?>
-                            <?php endif; ?>
-                        </div>
+                        <?php if ( comments_open() || get_comments_number() ) : ?>
+                            <?php comments_template(); ?>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="uk-width-1-4@m">
