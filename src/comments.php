@@ -14,15 +14,16 @@
 
         <?php theme_comment_nav(); ?>
 
-        <ol class="comment-list">
+        <div class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'style'       => 'ol',
+                    'walker' => new Theme_Comments_Walker(),
+					'style' => 'div',
 					'short_ping'  => true,
 					'avatar_size' => 56,
 				) );
 			?>
-		</ol>
+		</div>
 
         <?php theme_comment_nav(); ?>
 

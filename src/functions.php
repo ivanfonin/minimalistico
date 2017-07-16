@@ -142,8 +142,10 @@ require 'inc/theme-hooks.php';
 
 /**
  * Require Navbar Walker class.
- * And require Offcanvas Nav Walker class.
- * Classes generate UIkit v3 navbar markup and nav in offcanvas markup.
+ * Require Comments Walker class.
+ * Require Offcanvas Nav Walker class.
+ * Classes generate UIkit v3 navbar markup, comments markup and nav in offcanvas markup.
  */
 require 'inc/Theme_Navbar_Walker.php';
+require 'inc/Theme_Comments_Walker.php';
 require 'inc/Theme_Offcanvas_Nav_Walker.php';
