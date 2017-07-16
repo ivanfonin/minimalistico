@@ -62,9 +62,9 @@ if ( ! function_exists( 'theme_show_pageviews' ) ) {
 /**
 * Show posted on date.
 */
-if ( ! function_exists( 'theme_show_posted_on_date' ) ) {
+if ( ! function_exists( 'theme_show_post_date' ) ) {
 
-    function theme_show_posted_on_date() {
+    function theme_show_post_date() {
         $posted_on = sprintf( '<time class="date uk-margin-small-right uk-button uk-button-link" datetime="%1$s">%2$s</time>',
                              esc_attr( get_the_date('c') ),
                              esc_html( get_the_date() )
@@ -102,7 +102,25 @@ if ( ! function_exists( 'theme_show_post_categories' ) ) {
         $categories_list = get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'themestarter' ) );
 
         if ( $categories_list ) {
-            echo '<span class="uk-button uk-button-link">' . $categories_list . '</span>';
+            echo '<span class="uk-margin-small-right">';
+                echo '<span uk-icon="icon: tag; ratio: .7"></span> ';
+                echo '<span class="uk-button uk-button-link">' . $categories_list . '</span>';
+            echo '</span>';
+        }
+    }
+
+}
+
+/**
+* Show tags list.
+*/
+if ( ! function_exists( 'theme_show_post_tags' ) ) {
+
+    function theme_show_post_tags() {
+        $tag_list = get_the_tag_list( '<span uk-icon="icon: hashtag; ratio: .7"></span><span class="tags uk-margin-small-right"><span class="uk-button uk-button-link">', '</span>, <span class="uk-button uk-button-link">', '</span></span>' );
+
+        if ( $tag_list ) {
+            echo $tag_list;
         }
     }
 
@@ -129,7 +147,7 @@ if ( ! function_exists( 'theme_show_comments_number' ) ) {
 if ( ! function_exists( 'theme_post_meta' ) ) {
 
     function theme_post_meta() {
-            theme_show_posted_on_date();
+            theme_show_post_date();
             theme_show_comments_number();
             theme_show_pageviews();
     }
@@ -137,16 +155,14 @@ if ( ! function_exists( 'theme_post_meta' ) ) {
 }
 
 /**
- * Post footer meta - tags list.
+ * Post single meta - author, categories list, tags list.
  */
-if ( ! function_exists( 'theme_post_footer_meta' ) ) {
+if ( ! function_exists( 'theme_post_single_meta' ) ) {
 
-    function theme_post_footer_meta() {
-        $tag_list = get_the_tag_list( '<span uk-icon="icon: hashtag; ratio: .7"></span><span class="tags"><span class="uk-button uk-button-link">', '</span>, <span class="uk-button uk-button-link">', '</span></span>' );
-
-        if ( $tag_list ) {
-            echo $tag_list;
-        }
+    function theme_post_single_meta() {
+        theme_show_post_date();
+        theme_show_post_categories();
+        theme_show_post_tags();
     }
 
 }
@@ -174,6 +190,46 @@ function theme_print_posts_pagination() {
     </div>
 
     <?php
+}
+
+function theme_post_navigation( $args = array() ) {
+    echo theme_get_post_navigation( $args );
+}
+
+function theme_get_post_navigation( $args = array() ) {
+    $args = wp_parse_args( $args, array(
+        'prev_text'          => '%title',
+        'next_text'          => '%title',
+        'in_same_term'       => false,
+        'excluded_terms'     => '',
+        'taxonomy'           => 'category',
+        'screen_reader_text' => __( 'Post navigation' ),
+    ) );
+
+    $navigation = '';
+
+    $previous = get_previous_post_link(
+        '<div class="nav-previous uk-float-left">%link</div>',
+        $args['prev_text'],
+        $args['in_same_term'],
+        $args['excluded_terms'],
+        $args['taxonomy']
+    );
+
+    $next = get_next_post_link(
+        '<div class="nav-next uk-float-right">%link</div>',
+        $args['next_text'],
+        $args['in_same_term'],
+        $args['excluded_terms'],
+        $args['taxonomy']
+    );
+
+    // Only add markup if there's somewhere to navigate to.
+    if ( $previous || $next ) {
+        $navigation = _navigation_markup( $previous . $next, 'post-navigation', $args['screen_reader_text'] );
+    }
+
+    return $navigation;
 }
 
 /**
