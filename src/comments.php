@@ -8,19 +8,19 @@
 
 <div class="comments uk-section-small">
     <?php if ( have_comments() ) : ?>
-        <h2 class="uk-h2">
-            <?php printf( __( 'Comments published: %1$d', 'themestarter' ), get_comments_number() ); ?>
+        <h2 class="uk-h3 uk-text-muted">
+            <span uk-icon="comment"></span> <?php echo get_comments_number(); ?>
         </h2>
 
         <?php theme_comment_nav(); ?>
 
-        <div class="comment-list">
+        <div class="uk-comment-list">
 			<?php
 				wp_list_comments( array(
                     'walker' => new Theme_Comments_Walker(),
 					'style' => 'div',
 					'short_ping'  => true,
-					'avatar_size' => 56,
+					'avatar_size' => 34,
 				) );
 			?>
 		</div>
@@ -42,11 +42,11 @@
     $fields   =  array(
         'author' =>
             '<div class="uk-margin">' .
-                '<input class="uk-input" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
+                '<input class="uk-input" id="author" name="author" type="text" placeholder="' . __( 'Name', 'themestarter' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
             '</div>',
         'email' =>
             '<div class="uk-margin">' .
-                '<input class="uk-input" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' .
+                '<input class="uk-input" id="email" name="email" type="text" placeholder="' . __( 'Email', 'themestarter' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' .
             '</div>',
     );
 
@@ -57,9 +57,13 @@
         'comment_notes_after' => '',
         'comment_field' =>
             '<div class="uk-margin">' .
-                '<textarea class="uk-textarea" id="comment" name="comment" aria-required="true"></textarea>' .
+                '<textarea class="uk-textarea" id="comment" name="comment" aria-required="true" placeholder="' . __( 'Comment', 'themestarter' ) . '"></textarea>' .
             '</div>',
     ); ?>
 
-	<?php comment_form( $comments_args ); ?>
+    <div class="uk-section uk-section-xsmall">
+        <div class="uk-card">
+            <?php comment_form( $comments_args ); ?>
+        </div>
+    </div>
 </div>

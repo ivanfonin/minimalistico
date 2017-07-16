@@ -16,7 +16,6 @@
         </div>
         <footer>
             <?php theme_show_post_author(); ?>
-            <?php theme_show_comments_number(); ?>
         </footer>
     </div>
 </article>

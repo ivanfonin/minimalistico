@@ -36,6 +36,8 @@ get_header(); ?>
                         <?php if ( comments_open() || get_comments_number() ) : ?>
                             <?php comments_template(); ?>
                         <?php endif; ?>
+
+                        <?php echo get_the_post_navigation(); ?>
                     </div>
                 </div>
                 <div class="uk-width-1-4@m">
@@ -43,12 +45,6 @@ get_header(); ?>
                         <?php get_sidebar(); ?>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="uk-section uk-section-muted uk-section-xsmall">
-            <div class="uk-container">
-                <?php echo theme_post_navigation(); ?>
             </div>
         </div>
 
