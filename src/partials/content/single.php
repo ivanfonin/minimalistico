@@ -5,21 +5,31 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="post-header">
-        <?php if ( has_post_thumbnail() ) : ?>
-            <figure class="post-thumbnail"><?php the_post_thumbnail(); ?></figure>
+    <?php if ( has_post_thumbnail() ) : ?>
+        <header class="uk-section-muted uk-light">
+            <div class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-xlarge" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
+                <div class="uk-container">
+                    <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+                        <div class="uk-width-1-1@m uk-first-column">
+                            <?php the_title( '<h1 class="uk-h1 uk-text-center uk-margin-small-bottom">', '</h1>' ); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <?php endif; ?>
+
+    <div class="uk-container uk-container-small uk-section">
+        <?php if ( ! has_post_thumbnail() ) : ?>
+            <header>
+                <?php the_title( '<h1 class="uk-h1 uk-text-left uk-text-center@m uk-margin-large-bottom">', '</h1>' ); ?>
+            </header>
         <?php endif; ?>
-
-        <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
-
-        <div class="uk-article-meta">
-            <?php theme_post_meta(); ?>
+        <div>
+            <?php the_content(); ?>
         </div>
-    </header>
-    <div>
-        <?php the_content(); ?>
+        <footer>
+            <?php theme_post_footer_meta(); ?>
+        </footer>
     </div>
-    <footer class="post-footer">
-        <?php theme_post_footer_meta(); ?>
-    </footer>
 </article>

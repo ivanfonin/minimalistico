@@ -42,7 +42,7 @@ if ( ! function_exists( 'theme_print_page_sidebar' ) ) {
 /**
 * Add support for the Pageviews plugin.
 */
-if ( ! function_exists( 'theme_post_meta' ) ) {
+if ( ! function_exists( 'theme_show_pageviews' ) ) {
 
     function theme_show_pageviews() {
        if ( ! has_action( 'pageviews' ) )
@@ -60,39 +60,78 @@ if ( ! function_exists( 'theme_post_meta' ) ) {
 }
 
 /**
- * Post meta info - publishing date, author and categories list.
- */
-if ( ! function_exists( 'theme_post_meta' ) ) {
+* Show posted on date.
+*/
+if ( ! function_exists( 'theme_show_posted_on_date' ) ) {
 
-    function theme_post_meta() {
+    function theme_show_posted_on_date() {
         $posted_on = sprintf( '<time class="date uk-margin-small-right uk-button uk-button-link" datetime="%1$s">%2$s</time>',
                              esc_attr( get_the_date('c') ),
                              esc_html( get_the_date() )
-        );
+        ); ?>
 
+        <span uk-icon="icon: clock; ratio: .7"></span> <span class="posted-on"><?php echo $posted_on; ?></span>
+
+        <?php
+    }
+
+}
+
+/**
+* Show post author.
+*/
+if ( ! function_exists( 'theme_show_post_author' ) ) {
+
+    function theme_show_post_author() {
         $author = sprintf( '<a class="author-link uk-margin-small-right uk-button uk-button-link" href="%1$s">%2$s</a>',
                           esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
                           esc_html( get_the_author() )
         );
 
-        $theme_post_meta = '<span uk-icon="icon: clock; ratio: .7"></span> <span class="posted-on">' . $posted_on . '</span> <span uk-icon="icon: user; ratio: .7"></span> <span class="author">' . $author . '</span>';
+        echo '<span uk-icon="icon: user; ratio: .7"></span> <span class="author">' . $author . '</span> ';
+    }
 
+}
 
-        $categories_list = '<span class="uk-button uk-button-link">';
-        $categories_list .= get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'themestarter' ) );
-        $categories_list .= '</span>';
+/**
+* Show post categories.
+*/
+if ( ! function_exists( 'theme_show_post_categories' ) ) {
+
+    function theme_show_post_categories() {
+        $categories_list = get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'themestarter' ) );
 
         if ( $categories_list ) {
-            echo '<p class="uk-text-meta uk-margin-small-bottom">';
-                echo $theme_post_meta . '<span uk-icon="icon: tag; ratio: .7"></span> <span class="categories uk-margin-small-right">' . $categories_list . '</span>';
-                theme_show_pageviews();
-            echo '</p>';
-        } else {
-            echo '<p class="uk-text-meta uk-text-uppercase uk-margin-small-bottom">';
-                echo $theme_post_meta;
-                theme_show_pageviews();
-            echo '</p>';
+            echo '<span class="uk-button uk-button-link">' . $categories_list . '</span>';
         }
+    }
+
+}
+
+/**
+* Show comments number.
+*/
+if ( ! function_exists( 'theme_show_comments_number' ) ) {
+
+    function theme_show_comments_number() { ?>
+        <span class="uk-text-small uk-text-bold uk-margin-small-right">
+            <span uk-icon="icon: comment; ratio: .7"></span>&nbsp;
+            <span class="uk-button uk-button-link"><?php echo get_comments_number(); ?></span>
+        </span>
+        <?php
+    }
+
+}
+
+/**
+ * Post meta info - publishing date, author and categories list.
+ */
+if ( ! function_exists( 'theme_post_meta' ) ) {
+
+    function theme_post_meta() {
+            theme_show_posted_on_date();
+            theme_show_comments_number();
+            theme_show_pageviews();
     }
 
 }

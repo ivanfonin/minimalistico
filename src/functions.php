@@ -10,6 +10,9 @@ if ( ! function_exists( 'theme_setup' ) ) {
 
     function theme_setup() {
 
+        // Set the default content width.
+	       $GLOBALS['content_width'] = 920;
+
         // Make the theme available for translations.
         load_theme_textdomain( 'themestarter', get_template_directory() . '/languages' );
 
@@ -39,17 +42,11 @@ if ( ! function_exists( 'theme_setup' ) ) {
         ) );
 
         // Add theme support for Custom Logo.
-        function theme_custom_logo_setup() {
-            $defaults = array(
-                'height'      => 80,
-                'width'       => 160,
-                'flex-height' => true,
-                'flex-width'  => true,
-                'header-text' => array( 'site-title', 'site-description' ),
-            );
-            add_theme_support( 'custom-logo', $defaults );
-        }
-        add_action( 'after_setup_theme', 'theme_custom_logo_setup' );
+        add_theme_support( 'custom-logo', array(
+            'height'      => 80,
+            'width'       => 160,
+            'flex-width'  => true,
+        ) );
 
         // Add theme support for selective refresh for widgets.
         add_theme_support( 'customize-selective-refresh-widgets' );

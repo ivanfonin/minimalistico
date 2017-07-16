@@ -14,7 +14,9 @@
             </figure>
         </a>
         <div class="uk-article-meta">
-            <?php theme_post_meta(); ?>
+            <div class="uk-text-meta">
+                <?php theme_post_meta(); ?>
+            </div>
         </div>
         <h1 class="uk-h4 uk-margin-small-bottom uk-margin-small-top">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
