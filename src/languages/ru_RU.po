@@ -1,98 +1,179 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Themestarter\n"
-"POT-Creation-Date: 2015-02-15 11:17+0100\n"
-"PO-Revision-Date: 2015-02-15 11:33+0100\n"
-"Last-Translator: \n"
+"Project-Id-Version: Minimalistico\n"
+"POT-Creation-Date: 2017-07-17 15:29+0300\n"
+"PO-Revision-Date: 2017-07-17 15:29+0300\n"
+"Last-Translator: Ivan Fonin <mail@ivanfonin.com>\n"
 "Language-Team: \n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
-"X-Poedit-Basepath: /home/gao/Codex/wordpress/themes/themestarter/languages\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__;esc_attr_x\n"
+"X-Poedit-Basepath: /home/gao/Codex/wordpress/workflow/minimalistico/src/"
+"languages\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: ru_RU\n"
-"X-Poedit-SearchPath-0: /home/gao/Codex/wordpress/themes/themestarter\n"
-"X-Poedit-SearchPath-1: /home/gao/Codex/wordpress/themes/themestarter/inc\n"
+"X-Poedit-SearchPath-0: /home/gao/Codex/wordpress/workflow/minimalistico/src\n"
+"X-Poedit-SearchPath-1: /home/gao/Codex/wordpress/workflow/minimalistico/src/"
+"inc\n"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/footer.php:9
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/header.php:18
+msgid "Skip to content"
+msgstr "К содержанию"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/header.php:47
+msgid "Search"
+msgstr "Поиск"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/search.php:17
 #, php-format
-msgid "Starter theme for %1$s created by %2$s."
-msgstr "Стартовую тему для %1$s создал %2$s."
+msgid "<span uk-icon=\"icon: search\"></span> %s"
+msgstr "<span uk-icon=\"icon: search\"></span> %s"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/404.php:13
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/404.php:13
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Запрашиваемая страница не найдена."
 
-#: /home/gao/Codex/wordpress/themes/themestarter/404.php:17
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/404.php:17
 msgid "Looks like nothing was found. Maybe try a search?"
 msgstr "Похоже, что ничего не найдено. Может стоит попробовать поиск?"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/content.php:21
-msgid "Read more"
-msgstr "Читать далее"
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/searchform.php:10
+msgid "Search &hellip;"
+msgstr "Поиск &hellip;"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/comments.php:12
-#, php-format
-msgid "Comments published: %1$d"
-msgstr "Комментариев опубликовано: %1$d"
-
-#: /home/gao/Codex/wordpress/themes/themestarter/comments.php:32
-msgid "Comments are closed."
-msgstr "Комментарии закрыты."
-
-#: /home/gao/Codex/wordpress/themes/themestarter/search.php:15
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Результаты поиска для: %s"
-
-#: /home/gao/Codex/wordpress/themes/themestarter/page-full-width.php:7
-msgid "Full Width Page"
-msgstr "Без сайдбара"
-
-#: /home/gao/Codex/wordpress/themes/themestarter/content-none.php:9
-msgid "Nothing Found"
-msgstr "Ничего не найдено"
-
-#: /home/gao/Codex/wordpress/themes/themestarter/content-none.php:13
-msgid "Sorry, but nothing was found. Try other keywords."
-msgstr "Извините, но ничего не найдено. Попробуйте другие ключевые слова."
-
-#: /home/gao/Codex/wordpress/themes/themestarter/content-none.php:16
-msgid "Hm, looks like nothing was found. Maybe try a search?"
-msgstr "Хм, похоже, что ничего не найдено. Может стоит попробовать поиск?"
-
-#: /home/gao/Codex/wordpress/themes/themestarter/functions.php:27
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/functions.php:30
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/functions.php:50
-msgid "Main Sidebar"
-msgstr "Сайдбар"
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/functions.php:31
+msgid "Social Menu"
+msgstr "Социальные сети"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:24
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:41
-msgid ", "
-msgstr ", "
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/functions.php:73
+msgid "Blog Sidebar"
+msgstr "Сайдбар блога"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:44
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/footer.php:28
 #, php-format
-msgid "Tags: %1$s"
-msgstr "Тэги: %1$s"
+msgid "Theme for %1$s by %2$s."
+msgstr "Тему для %1$s создал %2$s."
 
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:58
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/comments.php:33
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/comments.php:45
+msgid "Name"
+msgstr "Имя"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/comments.php:49
+msgid "Email"
+msgstr "Email"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/comments.php:60
+msgid "Comment"
+msgstr "Комментарий"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/page.php:19
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/page.php:25
+msgid "Next page"
+msgstr "Вперёд"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/page.php:26
+msgid "Previous page"
+msgstr "Назад"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/page-templates/home.php:7
+msgid "Home Page"
+msgstr "Главная страница"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/content/search.php:18
+msgid "Page"
+msgstr "Страница"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/content/none.php:9
+msgid "Nothing Found"
+msgstr "Ничего не найдено"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/content/none.php:13
+msgid "Sorry, but nothing was found. Try other keywords."
+msgstr "Извините, но ничего не найдено. Попробуйте другие ключевые слова."
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/content/none.php:16
+msgid "Hm, looks like nothing was found. Maybe try a search?"
+msgstr "Хм, похоже, что ничего не найдено. Может стоит попробовать поиск?"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/widgets/call-to-action.php:4
+msgid "Want to work with us?"
+msgstr "Хотите работать с нами?"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/widgets/call-to-action.php:5
+msgid ""
+"Subscribe to our newsleter and be notified when new WordPress theme is "
+"publsihed."
+msgstr ""
+"Оставьте заявку на сайте или позвоните по телефон, обсудим работу над Вашим "
+"сайтом."
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/partials/widgets/call-to-action.php:8
+msgid "Call to action"
+msgstr "Подписаться"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:102
+msgid "</span>, <span class=\"uk-button uk-button-link\">"
+msgstr "</span>, <span class=\"uk-button uk-button-link\">"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:185
+msgid "Previous"
+msgstr "Назад"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:186
+msgid "Next"
+msgstr "Вперёд"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:187
 msgid "Posts Navigation"
 msgstr "Навигация по записям"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:71
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:205
 msgid "Comment navigation"
 msgstr "Навигация по комментариям"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:74
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:208
 msgid "Older Comments"
 msgstr "Старые комментарии"
 
-#: /home/gao/Codex/wordpress/themes/themestarter/inc/theme-functions.php:78
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-template-functions.php:212
 msgid "Newer Comments"
 msgstr "Новые комментарии"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/Theme_Comments_Walker.php:51
+msgid "Authors gravatar"
+msgstr "Аватар комментатора"
+
+#: /home/gao/Codex/wordpress/workflow/minimalistico/src/inc/theme-hooks.php:89
+msgid "Archives"
+msgstr "Архивы"
+
+#~ msgid "Read more"
+#~ msgstr "Читать далее"
+
+#~ msgid "Comments published: %1$d"
+#~ msgstr "Комментариев опубликовано: %1$d"
+
+#~ msgid "Search Results for: %s"
+#~ msgstr "Результаты поиска для: %s"
+
+#~ msgid "Full Width Page"
+#~ msgstr "Без сайдбара"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "Tags: %1$s"
+#~ msgstr "Тэги: %1$s"

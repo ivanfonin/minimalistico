@@ -25,7 +25,9 @@
                                 <?php endif; ?>
                             </div>
                             <div class="uk-text-center uk-width-1-2@s uk-width-1-4@m uk-text-right@s uk-margin-remove-top" uk-scrollspy="cls:uk-animation-slide-right-small">
-                                <a class="uk-text-small" href="<?php echo get_page_link(21); ?>"><?php _e( 'Theme Minimalistico by Ivan Fonin', 'minimalistico' ); ?></a>
+                                <p class="uk-text-small"><?php printf( __( 'Theme for %1$s by %2$s.', 'minimalistico' ),
+                                    '<a target="_blank" href="https://wordpress.org/" rel="nofollow">WordPress</a>',
+                                    '<a target="_blank" href="https://ivanfonin.com/" rel="nofollow">Ivan Fonin</a>' ); ?></p>
                             </div>
                         </div>
                     </div>

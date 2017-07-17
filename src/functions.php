@@ -43,8 +43,9 @@ if ( ! function_exists( 'theme_setup' ) ) {
 
         // Add theme support for Custom Logo.
         add_theme_support( 'custom-logo', array(
-            'height'      => 80,
-            'width'       => 160,
+            'height'      => 50,
+            'width'       => 170,
+            'flex-height' => true,
             'flex-width'  => true,
         ) );
 

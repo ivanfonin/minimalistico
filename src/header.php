@@ -25,7 +25,11 @@
                     <nav class="uk-navbar" uk-navbar>
                         <div class="uk-navbar-left">
                             <a class="uk-navbar-item uk-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <?php bloginfo( 'name' ); ?>
+                                <?php if ( has_custom_logo() ) : ?>
+                                    <?php the_custom_logo(); ?>
+                                <?php else : ?>
+                                    <?php bloginfo( 'name' ); ?>
+                                <?php endif; ?>
                             </a>
                             <?php if ( has_nav_menu( 'main' ) ) : ?>
                                 <?php wp_nav_menu( array(
