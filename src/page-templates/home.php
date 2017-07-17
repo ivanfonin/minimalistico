@@ -18,7 +18,7 @@ __( 'Home Page', 'minimalistico' ); ?>
                             <div class="uk-container">
                                 <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
                                     <div class="uk-width-1-1@m uk-first-column">
-                                        <?php the_title( '<h1 class="uk-h1 uk-text-center uk-margin-small-bottom">', '</h1>' ); ?>
+                                        <?php the_title( '<h1 class="uk-h1 uk-text-center uk-margin-small-bottom tm-post-title">', '</h1>' ); ?>
                                         <p class="uk-h4 uk-text-center uk-margin-remove-top">
                                             <?php bloginfo('description'); ?>
                                         </p>

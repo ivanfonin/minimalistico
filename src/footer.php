@@ -32,6 +32,8 @@
                 </div>
             </footer>
 
+            <?php get_template_part( 'partials/search-modal' ); ?>
+
             <div id="offcanvas" uk-offcanvas="overlay: true">
                 <div class="uk-offcanvas-bar">
 
@@ -51,8 +53,6 @@
             </div>
 
         </div> <!-- .uk-offcanvas-content -->
-
-        <?php get_template_part( 'partials/search-modal' ); ?>
 
     </div><!-- #app -->
 <?php wp_footer(); ?>

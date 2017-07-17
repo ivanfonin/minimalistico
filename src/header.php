@@ -15,9 +15,9 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <div id="app">
-        <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'minimalistico' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'minimalistico' ); ?></a>
 
+    <div id="app">
         <div class="uk-offcanvas-content">
             <div class="uk-navbar-container uk-box-shadow-small">
                 <div class="uk-container">
