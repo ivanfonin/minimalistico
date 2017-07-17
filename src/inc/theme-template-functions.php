@@ -99,7 +99,7 @@ if ( ! function_exists( 'theme_show_post_author' ) ) {
 if ( ! function_exists( 'theme_show_post_categories' ) ) {
 
     function theme_show_post_categories() {
-        $categories_list = get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'themestarter' ) );
+        $categories_list = get_the_category_list( __( '</span>, <span class="uk-button uk-button-link">', 'minimalistico' ) );
 
         if ( $categories_list ) {
             echo '<span class="uk-margin-small-right">';
@@ -182,9 +182,9 @@ function theme_print_posts_pagination() {
             <?php the_posts_pagination( array(
                 'end_size' => 2,
                 'mid_size' => 2,
-                'prev_text' => __( 'Previous', 'themestarter' ),
-                'next_text' => __( 'Next', 'themestarter' ),
-                'screen_reader_text' => __( 'Posts Navigation', 'themestarter' ),
+                'prev_text' => __( 'Previous', 'minimalistico' ),
+                'next_text' => __( 'Next', 'minimalistico' ),
+                'screen_reader_text' => __( 'Posts Navigation', 'minimalistico' ),
             ) ); ?>
         </div>
     </div>
@@ -202,14 +202,14 @@ if ( ! function_exists( 'theme_comment_nav' ) ) {
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 
             <nav class="comment-navigation" role="navigation">
-                <h2 class="comment-nav-title"><?php _e( 'Comment navigation', 'themestarter' ); ?></h2>
+                <h2 class="comment-nav-title"><?php _e( 'Comment navigation', 'minimalistico' ); ?></h2>
                 <div class="comment-nav-links">
                     <?php
-                        if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'themestarter' ) ) ) :
+                        if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'minimalistico' ) ) ) :
                             printf( '<div class="nav-previous">%s</div>', $prev_link );
                         endif;
 
-                        if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'themestarter' ) ) ) :
+                        if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'minimalistico' ) ) ) :
                             printf( '<div class="nav-next">%s</div>', $next_link );
                         endif;
                     ?>

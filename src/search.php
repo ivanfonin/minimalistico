@@ -14,7 +14,7 @@
             <div class="uk-section uk-section-muted uk-section-xsmall">
                 <header class="uk-container">
                     <h1 class="uk-text-uppercase uk-text-meta">
-                        <?php printf( __( '<span uk-icon="icon: search"></span> «%s»', 'themestarter' ), get_search_query() ); ?>
+                        <?php printf( __( '<span uk-icon="icon: search"></span> %s', 'minimalistico' ), get_search_query() ); ?>
                     </h1>
                 </header>
             </div>

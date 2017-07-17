@@ -1,10 +1,8 @@
 {
-    "/dist/minimalistico/assets/js/vendor.js": "/dist/minimalistico/assets/js/vendor.js",
     "/dist/minimalistico/assets/js/app.js": "/dist/minimalistico/assets/js/app.js",
     "/dist/minimalistico/assets/js/admin/admin.js": "/dist/minimalistico/assets/js/admin/admin.js",
     "/dist/minimalistico/assets/css/app.css": "/dist/minimalistico/assets/css/app.css",
     "/dist/minimalistico/assets/css/admin/editor-style.css": "/dist/minimalistico/assets/css/admin/editor-style.css",
-    "/dist/minimalistico/assets/js/manifest.js": "/dist/minimalistico/assets/js/manifest.js",
     "/dist/minimalistico/screenshot.png": "/dist/minimalistico/screenshot.png",
     "/dist/minimalistico/style.css": "/dist/minimalistico/style.css",
     "/dist/minimalistico/404.php": "/dist/minimalistico/404.php",

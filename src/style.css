@@ -8,5 +8,26 @@
 * License: The MIT License
 * License URI: http://opensource.org/licenses/mit-license.php
 * Tags: blog, education, photography, portfolio, news, one-column, two-columns, right-sidebar, grid-layout, translation-ready, custom-menu, custom-logo, featured-images, full-width-template
-* Text Domain: themestarter
+* Text Domain: minimalistico
 */
+
+/* WordPress */
+.bypostauthor{
+    background: #fafafa;
+}
+
+.wp-caption{
+
+}
+
+.wp-caption-text{
+
+}
+
+.sticky{
+
+}
+
+.gallery-caption{
+
+}

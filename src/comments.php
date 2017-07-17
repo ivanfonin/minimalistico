@@ -30,7 +30,7 @@
     <?php endif; ?>
 
     <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'themestarter' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'minimalistico' ); ?></p>
 	<?php endif; ?>
 
     <?php
@@ -42,11 +42,11 @@
     $fields   =  array(
         'author' =>
             '<div class="uk-margin">' .
-                '<input class="uk-input" id="author" name="author" type="text" placeholder="' . __( 'Name', 'themestarter' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
+                '<input class="uk-input" id="author" name="author" type="text" placeholder="' . __( 'Name', 'minimalistico' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
             '</div>',
         'email' =>
             '<div class="uk-margin">' .
-                '<input class="uk-input" id="email" name="email" type="text" placeholder="' . __( 'Email', 'themestarter' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' .
+                '<input class="uk-input" id="email" name="email" type="text" placeholder="' . __( 'Email', 'minimalistico' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />' .
             '</div>',
     );
 
@@ -57,7 +57,7 @@
         'comment_notes_after' => '',
         'comment_field' =>
             '<div class="uk-margin">' .
-                '<textarea class="uk-textarea" id="comment" name="comment" aria-required="true" placeholder="' . __( 'Comment', 'themestarter' ) . '"></textarea>' .
+                '<textarea class="uk-textarea" id="comment" name="comment" aria-required="true" placeholder="' . __( 'Comment', 'minimalistico' ) . '"></textarea>' .
             '</div>',
     ); ?>
 

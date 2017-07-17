@@ -15,6 +15,19 @@
                 <?php comments_template(); ?>
             <?php endif; ?>
 
+            <?php wp_link_pages( array(
+        		'before'           => '<p>' . __( 'Pages:', 'minimalistico' ),
+        		'after'            => '</p>',
+        		'link_before'      => '',
+        		'link_after'       => '',
+        		'next_or_number'   => 'number',
+        		'separator'        => ' ',
+        		'nextpagelink'     => __( 'Next page', 'minimalistico' ),
+        		'previouspagelink' => __( 'Previous page', 'minimalistico' ),
+        		'pagelink'         => '%',
+        		'echo'             => 1
+        	) ); ?>
+
         <?php endwhile; ?>
     </main>
 

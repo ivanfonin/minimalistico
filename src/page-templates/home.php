@@ -4,7 +4,7 @@
  *
  * Home page template file.
  */
-__( 'Home Page', 'themestarter' ); ?>
+__( 'Home Page', 'minimalistico' ); ?>
 
 <?php get_header(); ?>
 

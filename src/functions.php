@@ -11,10 +11,10 @@ if ( ! function_exists( 'theme_setup' ) ) {
     function theme_setup() {
 
         // Set the default content width.
-	       $GLOBALS['content_width'] = 920;
+        if ( ! isset( $content_width ) ) $content_width = 920;
 
         // Make the theme available for translations.
-        load_theme_textdomain( 'themestarter', get_template_directory() . '/languages' );
+        load_theme_textdomain( 'minimalistico', get_template_directory() . '/languages' );
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
@@ -27,8 +27,8 @@ if ( ! function_exists( 'theme_setup' ) ) {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-            'main' => __( 'Main Menu', 'themestarter' ),
-            'social' => __( 'Social Menu', 'themestarter' ),
+            'main' => __( 'Main Menu', 'minimalistico' ),
+            'social' => __( 'Social Menu', 'minimalistico' ),
         ) );
 
         // Output valid HTML5 for search form, comment form, comments and gallery.
@@ -69,18 +69,8 @@ add_editor_style( get_template_directory_uri() . '/assets/css/admin/editor-style
  */
 function theme_widgets_init() {
     register_sidebar( array(
-        'name' => __( 'Blog Sidebar', 'themestarter' ),
+        'name' => __( 'Blog Sidebar', 'minimalistico' ),
         'id' => 'blog-sidebar',
-        'description' => '',
-        'before_widget' => '<div id="%1$s" class="widget uk-card uk-box-shadow-medium uk-box-shadow-hover-small uk-card-body uk-margin-medium-bottom %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="uk-h4">',
-        'after_title' => '</h3>',
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Page Sidebar', 'themestarter' ),
-        'id' => 'page-sidebar',
         'description' => '',
         'before_widget' => '<div id="%1$s" class="widget uk-card uk-box-shadow-medium uk-box-shadow-hover-small uk-card-body uk-margin-medium-bottom %2$s">',
         'after_widget' => '</div>',
@@ -95,14 +85,12 @@ add_action( 'widgets_init', 'theme_widgets_init' );
  */
 function theme_scripts_and_styles() {
 
-    // Load main stylesheet.
+    // Enqueue theme stylesheet.
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
     wp_enqueue_style( 'app-style', get_template_directory_uri() . '/assets/css/app.css' );
 
-    // Load main scripts.
-    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', array( 'jquery' ), '', true );
-    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array( 'app-manifest' ), '', true );
-    wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/js/app.js', array( 'app-vendor' ), '', true );
+    // Enqueue theme script.
+    wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), '', true );
     wp_localize_script( 'app-script', 'App', array(
             'domain' => home_url(),
             'ajaxUrl' => admin_url( 'admin-ajax.php' ),
@@ -112,7 +100,7 @@ function theme_scripts_and_styles() {
         )
     );
 
-    // Comments reply script.
+    // Comment reply script.
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -121,12 +109,10 @@ function theme_scripts_and_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_scripts_and_styles' );
 
 /**
- * Enqueue custom admin scripts.
+ * Enqueue custom admin script.
  */
 function theme_admin_scripts() {
-    wp_enqueue_script( 'app-manifest', get_template_directory_uri() . '/assets/js/manifest.js', array( 'jquery' ), '', true );
-    wp_enqueue_script( 'app-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array( 'app-manifest' ), '', true );
-    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/assets/js/admin/admin.js', array( 'app-vendor' ), '', true );
+    wp_enqueue_script( 'admin-script', get_template_directory_uri() . '/assets/js/admin/admin.js', array( 'jquery' ), '', true );
 }
 add_action( 'admin_enqueue_scripts', 'theme_admin_scripts' );
 

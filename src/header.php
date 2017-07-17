@@ -16,7 +16,7 @@
 </head>
 <body <?php body_class(); ?>>
     <div id="app">
-        <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'themestarter' ); ?></a>
+        <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'minimalistico' ); ?></a>
 
         <div class="uk-offcanvas-content">
             <div class="uk-navbar-container uk-box-shadow-small">
@@ -39,14 +39,14 @@
                         <div class="uk-navbar-right">
                             <div class="uk-navbar-item uk-padding-remove-left">
                                 <a id="show-search-modal" href="#search-modal" uk-toggle uk-icon="icon: search">
-                                    <span class="screen-reader-text"><?php _e( 'Search', 'themestarter' ); ?></span>
+                                    <span class="screen-reader-text"><?php _e( 'Search', 'minimalistico' ); ?></span>
                                 </a>
                             </div>
                             <?php if ( has_nav_menu( 'social' ) ) : ?>
                                 <?php wp_nav_menu( array(
                                     'theme_location' => 'social',
                                     'container' => 'nav',
-                                    'container_class' => 'uk-navbar',
+                                    'container_class' => 'uk-navbar uk-visible@m',
                                     'menu_class' => 'uk-navbar-nav uk-navbar-center',
                                     'link_before' => '<span class="uk-hidden">',
                                     'link_after' => '</span>',

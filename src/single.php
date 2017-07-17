@@ -36,13 +36,24 @@ get_header(); ?>
                         <?php if ( comments_open() || get_comments_number() ) : ?>
                             <?php comments_template(); ?>
                         <?php endif; ?>
-
-                        <?php echo get_the_post_navigation(); ?>
                     </div>
                 </div>
                 <div class="uk-width-1-4@m">
                     <div class="uk-grid-medium">
                         <?php get_sidebar(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-section uk-section-muted uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+                    <div>
+                        <?php echo get_previous_post_link(); ?>
+                    </div>
+                    <div class="uk-text-right@m">
+                        <?php echo get_next_post_link(); ?>
                     </div>
                 </div>
             </div>

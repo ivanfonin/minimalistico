@@ -52,14 +52,6 @@ function theme_javascript_detection() {
 add_action( 'wp_head', 'theme_javascript_detection', 0 );
 
 /**
- * Don't display the front-end admin bar for non administrators.
- */
-function theme_show_admin_bar_for_admins_only( $content ) {
-    return ( current_user_can( 'administrator' ) ) ? $content : false;
-}
-add_filter( 'show_admin_bar' , 'theme_show_admin_bar_for_admins_only');
-
-/**
  * Change theme excerpt length.
  */
 function theme_excerpt_length( $length ) {
@@ -94,7 +86,7 @@ function theme_archive_title( $title ) {
     } elseif ( is_post_type_archive() ) {
         $title = post_type_archive_title( '<span uk-icon="icon: tag"></span> ', false );
     } else {
-        $title = __( 'Archives', 'themestarter' );
+        $title = __( 'Archives', 'minimalistico' );
     }
 
     return $html_start.$title.$html_end;

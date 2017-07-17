@@ -10,11 +10,11 @@
 
         <section class="uk-container uk-section-small">
             <header>
-                <h1 class="uk-h1 uk-text-center"><?php _e( 'Oops! That page can&rsquo;t be found.', 'themestarter' ); ?></h1>
+                <h1 class="uk-h1 uk-text-center"><?php _e( 'Oops! That page can&rsquo;t be found.', 'minimalistico' ); ?></h1>
             </header>
 
             <div class="uk-text-center">
-                <p><?php _e( 'Looks like nothing was found. Maybe try a search?', 'themestarter' ); ?></p>
+                <p><?php _e( 'Looks like nothing was found. Maybe try a search?', 'minimalistico' ); ?></p>
                 <?php get_search_form(); ?>
             </div>
         </section>
