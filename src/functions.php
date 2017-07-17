@@ -93,10 +93,10 @@ function theme_scripts_and_styles() {
     // Enqueue theme script.
     wp_enqueue_script( 'app-script', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), '', true );
     wp_localize_script( 'app-script', 'App', array(
-            'domain' => home_url(),
-            'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-            'root' => esc_url_raw( rest_url() ),
-            'nonce' => wp_create_nonce( 'wp_rest' ),
+            'domain'    => home_url(),
+            'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+            'root'      => esc_url_raw( rest_url() ),
+            'nonce'     => wp_create_nonce( 'wp_rest' ),
             'csrfToken' => wp_create_nonce( 'csrf' ),
         )
     );
@@ -131,7 +131,8 @@ require 'inc/theme-hooks.php';
  * Require Navbar Walker class.
  * Require Comments Walker class.
  * Require Offcanvas Nav Walker class.
- * Classes generate UIkit v3 navbar markup, comments markup and nav in offcanvas markup.
+ *
+ * Classes generate comments markup, navbar markup and offcanvas nav markup.
  */
 require 'inc/Theme_Navbar_Walker.php';
 require 'inc/Theme_Comments_Walker.php';

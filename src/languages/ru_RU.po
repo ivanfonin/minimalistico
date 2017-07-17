@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Minimalistico\n"
-"POT-Creation-Date: 2017-07-17 15:29+0300\n"
-"PO-Revision-Date: 2017-07-17 15:29+0300\n"
+"POT-Creation-Date: 2017-07-17 15:33+0300\n"
+"PO-Revision-Date: 2017-07-17 15:33+0300\n"
 "Last-Translator: Ivan Fonin <mail@ivanfonin.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -40,8 +40,8 @@ msgid "Looks like nothing was found. Maybe try a search?"
 msgstr "Похоже, что ничего не найдено. Может стоит попробовать поиск?"
 
 #: /home/gao/Codex/wordpress/workflow/minimalistico/src/searchform.php:10
-msgid "Search &hellip;"
-msgstr "Поиск &hellip;"
+msgid "Search&hellip;"
+msgstr "Поиск&hellip;"
 
 #: /home/gao/Codex/wordpress/workflow/minimalistico/src/functions.php:30
 msgid "Main Menu"
