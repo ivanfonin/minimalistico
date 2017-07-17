@@ -19,6 +19,7 @@ if (isSetup) {
         .sass(`${config.src}/assets/scss/admin/editor-style.scss`, `${config.dist}/assets/css/admin`)
 
         .copy(`${config.src}/screenshot.png`, `${config.dist}/screenshot.png`)
+        .copy(`${config.src}/readme.txt`, `${config.dist}/readme.txt`)
         .copy(`${config.src}/style.css`, `${config.dist}/style.css`)
         .copy(`${config.src}/*.php`, `${config.dist}/`)
         //.copy(`mix-manifest.json`, `${config.dist}/`) Not using it for now..

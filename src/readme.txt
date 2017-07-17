@@ -1,6 +1,6 @@
 == Description ==
 
-Minimalistico is a simple and minimalist blogging theme for WordPress. It has a
+Minimalistico is a modern and minimalist blogging theme for WordPress. It has a
 responsive layout, clean and easy to read typography, a three-column grid layout
 on blog page, a widget area in blog sidebar, a special menu for your social
 profiles, custom logo, featured images for posts and pages and much more.
