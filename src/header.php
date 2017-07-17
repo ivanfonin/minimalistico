@@ -18,6 +18,7 @@
     <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'minimalistico' ); ?></a>
 
     <div id="app">
+
         <div class="uk-offcanvas-content">
             <div class="uk-navbar-container uk-box-shadow-small">
                 <div class="uk-container">
