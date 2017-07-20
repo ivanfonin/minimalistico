@@ -74,8 +74,8 @@ class Theme_Comments_Walker extends Walker_Comment {
                 </header>
                 <div class="uk-comment-body" itemprop="text">
     				<?php comment_text(); ?>
-                    <?php if ($comment->comment_approved == '0') : ?>
-                        <p class="comment-meta-item">Your comment is awaiting moderation.</p>
+                    <?php if ( $comment->comment_approved == '0' ) : ?>
+                        <p class="comment-meta-item"><?php _e( 'Your comment is awaiting moderation.', 'minimalistico' ); ?></p>
                     <?php endif; ?>
     			</div>
             </div>
@@ -83,7 +83,7 @@ class Theme_Comments_Walker extends Walker_Comment {
 	<?php }
 
 	// end_el: closing HTML for comment template
-	function end_el(&$output, $comment, $depth = 0, $args = array() ) { ?>
+	function end_el( &$output, $comment, $depth = 0, $args = array() ) { ?>
 
         </article>
 
