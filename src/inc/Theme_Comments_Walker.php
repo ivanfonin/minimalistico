@@ -64,9 +64,11 @@ class Theme_Comments_Walker extends Walker_Comment {
                                     <?php comment_reply_link( array_merge( $args, array('class' => 'uk-link-muted', 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
                                 </li>
                             <?php endif; ?>
-                            <li>
-                                <?php edit_comment_link( '<span uk-icon="file-edit" style=""></span>','' ,'' ); ?>
-                            </li>
+                            <?php if ( current_user_can( 'edit_comment', $comment->comment_ID ) ) : ?>
+                                <li>
+                                    <?php edit_comment_link( '','<span uk-icon="file-edit">' ,'</span>' ); ?>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </header>
