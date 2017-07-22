@@ -60,20 +60,19 @@
     }
 }
 
-.wp-caption{
-
+.wp-caption,
+.gallery-caption{
+    max-width: 100% !important;
 }
 
 .wp-caption-text{
-
+    color: $global-muted-color;
+    font-size: $global-small-font-size;
+    margin-top: $global-small-margin;
 }
 
 .sticky{
-
-}
-
-.gallery-caption{
-
+    position: relative;
 }
 
 .custom-logo-link{
