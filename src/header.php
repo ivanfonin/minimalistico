@@ -57,9 +57,11 @@
                                     'link_after' => '</span>',
                                 ) ); ?>
                             <?php endif; ?>
-                            <div class="uk-navbar-item uk-hidden@m">
-                                <a href="#offcanvas" uk-toggle><span uk-icon="icon: menu"></span></a>
-                            </div>
+                            <?php if ( has_nav_menu( 'main' ) ) : ?>
+                                <div class="uk-navbar-item uk-hidden@m">
+                                    <a href="#offcanvas" uk-toggle><span uk-icon="icon: menu"></span></a>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </nav>
                 </div>
