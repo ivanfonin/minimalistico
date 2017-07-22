@@ -15,6 +15,7 @@ if ( ! function_exists( 'theme_print_blog_sidebar' ) ) {
         ob_end_clean();
 
         $theme_sidebar_with_uikit_ul_class = str_replace("<ul>", '<ul class="uk-list">', $sidebar_html);
+        $theme_sidebar_with_uikit_ul_class = str_replace('<ul id="recentcomments">', '<ul id="recentcomments" class="uk-list">', $theme_sidebar_with_uikit_ul_class);
 
         echo $theme_sidebar_with_uikit_ul_class;
     }

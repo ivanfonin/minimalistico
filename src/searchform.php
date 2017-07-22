@@ -10,8 +10,10 @@
     <label for="<?php echo $unique_id; ?>">
         <span class="screen-reader-text"><?php _e( 'Search for:', 'minimalistico' ); ?></span>
     </label>
-    <input type="search" id="<?php echo $unique_id; ?>" class="uk-input uk-form-width-medium" placeholder="<?php _e( 'Search&hellip;', 'minimalistico' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-	<button type="submit" class="uk-button uk-button-default uk-padding-small">
-        <span uk-icon="icon: search"></span>
-    </button>
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+            <input type="search" id="<?php echo $unique_id; ?>" class="uk-input" placeholder="<?php _e( 'Search&hellip;', 'minimalistico' ); ?>" value="<?php echo get_search_query(); ?>" name="s">
+        </div>
+    </div>
 </form>
