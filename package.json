@@ -19,8 +19,7 @@
     "cross-env": "^3.2.3",
     "gulp": "^3.9.1",
     "gulp-notify": "^3.0.0",
-    "laravel-mix": "^1.0.6",
-    "webpack": "^2.2.0"
+    "laravel-mix": "^1.2.0"
   },
   "dependencies": {
     "axios": "^0.15.3",
