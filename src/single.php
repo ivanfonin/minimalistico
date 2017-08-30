@@ -10,6 +10,7 @@ get_header(); ?>
         <?php if ( has_post_thumbnail() ) : ?>
             <header class="uk-section-muted uk-light">
                 <div class="uk-background-norepeat uk-background-cover uk-background-center-center uk-section uk-section-xlarge" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
+                    <div class="uk-position-cover" style="background-color: rgba(0, 0, 0, 0.15);"></div>
                     <div class="uk-container">
                         <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
                             <div class="uk-width-1-1@m uk-first-column">
