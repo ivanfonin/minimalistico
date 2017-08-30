@@ -5,10 +5,9 @@
 
 get_header(); ?>
 
-<main role="main" uk-height-viewport="expand: true">
+<?php if ( have_posts() ) : ?>
 
-    <?php if ( have_posts() ) : ?>
-
+    <main role="main" uk-height-viewport="expand: true">
         <div class="uk-section uk-section-muted uk-section-xsmall">
             <header class="uk-container">
                 <h1 class="uk-text-uppercase uk-text-meta">
@@ -34,17 +33,16 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+    </main>
 
-        <?php theme_print_posts_pagination(); ?>
+    <?php theme_print_posts_pagination(); ?>
 
-    <?php else : ?>
+<?php else : ?>
 
-        <div class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
-            <?php get_template_part( 'partials/content/none' ); ?>
-        </div>
+    <main role="main" class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+        <?php get_template_part( 'partials/content/none' ); ?>
+    </main>
 
-    <?php endif; ?>
-
-</main>
+<?php endif; ?>
 
 <?php get_footer(); ?>
