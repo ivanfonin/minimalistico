@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-    <main class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
+    <main role="main" class="uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="expand: true">
 
         <section class="uk-container uk-section-small">
             <header>
