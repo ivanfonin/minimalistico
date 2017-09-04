@@ -51,6 +51,17 @@
                         ) ); ?>
                     <?php endif; ?>
 
+                    <?php if ( has_nav_menu( 'social' ) ) : ?>
+                        <?php wp_nav_menu( array(
+                            'theme_location' => 'social',
+                            'container' => 'nav',
+                            'container_class' => 'uk-navbar uk-margin-small-top',
+                            'menu_class' => 'uk-navbar-nav tm-offcanvas-social-nav',
+                            'link_before' => '<span class="uk-hidden">',
+                            'link_after' => '</span>',
+                        ) ); ?>
+                    <?php endif; ?>
+
                 </div>
             </div>
 
