@@ -10,7 +10,7 @@
                     <div class="uk-margin-top uk-margin-bottom">
                         <div class="uk-child-width-auto@m uk-flex-middle" uk-grid>
                             <div class="uk-width-1-2@s uk-width-1-4@m uk-text-left@s uk-text-center" uk-scrollspy="cls:uk-animation-slide-left-small">
-                                <span class="uk-text-small">&copy; 2014-<?php echo date('Y'); ?>,</span> <a class="uk-text-small" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                                <span class="uk-text-small">&copy; <?php echo date('Y'); ?>,</span> <a class="uk-text-small" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                             </div>
                             <div class="uk-width-1-2@m uk-visible@m" uk-scrollspy="cls:uk-animation-slide-bottom-small">
                                 <?php if ( has_nav_menu( 'social' ) ) : ?>
