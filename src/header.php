@@ -43,9 +43,11 @@
                         </div>
                         <div class="uk-navbar-right">
                             <div class="uk-navbar-item uk-padding-remove-left">
-                                <a id="show-search-modal" href="#search-modal" uk-toggle uk-icon="icon: search">
-                                    <span class="screen-reader-text"><?php _e( 'Search', 'minimalistico' ); ?></span>
-                                </a>
+                                <button uk-toggle="target: #show-search-modal" type="button" uk-icon="icon: search">
+                                    <span class="screen-reader-text">
+                                        <?php _e( 'Search', 'minimalistico' ); ?>
+                                    </span>
+                                </button>
                             </div>
                             <?php if ( has_nav_menu( 'social' ) ) : ?>
                                 <?php wp_nav_menu( array(
@@ -59,7 +61,9 @@
                             <?php endif; ?>
                             <?php if ( has_nav_menu( 'main' ) ) : ?>
                                 <div class="uk-navbar-item uk-hidden@m">
-                                    <a href="#offcanvas" uk-toggle><span uk-icon="icon: menu"></span></a>
+                                    <button uk-toggle="target: #offcanvas" type="button">
+                                        <span uk-icon="icon: menu"></span>
+                                    </button>
                                 </div>
                             <?php endif; ?>
                         </div>
