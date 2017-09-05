@@ -13,7 +13,7 @@
     <div class="uk-margin">
         <div class="uk-inline">
             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
-            <input type="search" id="<?php echo $unique_id; ?>" class="uk-input" placeholder="<?php _e( 'Search&hellip;', 'minimalistico' ); ?>" value="<?php echo get_search_query(); ?>" name="s">
+            <input type="search" id="<?php echo $unique_id; ?>" class="uk-input" placeholder="<?php _e( 'Search&hellip;', 'minimalistico' ); ?>" value="<?php echo get_search_query(); ?>" name="s" autofocus>
         </div>
     </div>
 </form>
